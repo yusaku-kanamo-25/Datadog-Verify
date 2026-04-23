@@ -1,0 +1,328 @@
+INSERT INTO ItemTable (item_name, item_category, item_prefecture, item_price, item_stock, item_image) VALUES
+('ジンギスカン', '肉', '北海道', 2500, 50, 'image_url_here'),
+('サーモン', '魚', '北海道', 3000, 40, 'image_url_here'),
+('北海道米', '米・パン', '北海道', 2000, 100, 'image_url_here'),
+('メロン', '果物', '北海道', 4000, 30, 'image_url_here'),
+('ジャガイモ', '野菜', '北海道', 800, 150, 'image_url_here');
+
+INSERT INTO ItemTable (item_name, item_category, item_prefecture, item_price, item_stock, item_image) VALUES
+('りんご', '果物', '青森県', 500, 200, 'image_url_here'),
+('ホタテ', '魚', '青森県', 1500, 70, 'image_url_here'),
+('長芋', '野菜', '青森県', 1000, 90, 'image_url_here'),
+('ヨーグルト', '卵・乳製品', '青森県', 600, 120, 'image_url_here'),
+('りんごジュース', '飲料', '青森県', 800, 110, 'image_url_here');
+
+INSERT INTO ItemTable (item_name, item_category, item_prefecture, item_price, item_stock, item_image) VALUES
+('前沢牛', '肉', '岩手県', 5000, 30, 'image_url_here'),
+('サンマ', '魚', '岩手県', 700, 150, 'image_url_here'),
+('ひとめぼれ', '米・パン', '岩手県', 2500, 100, 'image_url_here'),
+('わんこそば', 'スイーツ', '岩手県', 1200, 80, 'image_url_here'),
+('南部鉄器', '雑貨・日用品', '岩手県', 8000, 20, 'image_url_here');
+
+INSERT INTO ItemTable (item_name, item_category, item_prefecture, item_price, item_stock, item_image) VALUES
+('ささにしき', '米・パン', '宮城県', 2500, 90, 'image_url_here'),
+('サケ', '魚', '宮城県', 2000, 80, 'image_url_here'),
+('笹かまぼこ', 'スイーツ', '宮城県', 600, 150, 'image_url_here'),
+('一ノ蔵', '酒', '宮城県', 1800, 60, 'image_url_here'),
+('冷やし中華', '麺', '宮城県', 1000, 50, 'image_url_here');
+
+INSERT INTO ItemTable (item_name, item_category, item_prefecture, item_price, item_stock, item_image) VALUES
+('あきたこまち', '米・パン', '秋田県', 2800, 110, 'image_url_here'),
+('比内地鶏', '肉', '秋田県', 3500, 40, 'image_url_here'),
+('新政', '酒', '秋田県', 2000, 70, 'image_url_here'),
+('もも', '果物', '秋田県', 1200, 80, 'image_url_here'),
+('しょっつる', '調味料', '秋田県', 500, 60, 'image_url_here');
+
+INSERT INTO ItemTable (item_name, item_category, item_prefecture, item_price, item_stock, item_image) VALUES
+('さくらんぼ', '果物', '山形県', 2500, 70, 'image_url_here'),
+('庄内砂丘メロン', '野菜', '山形県', 3000, 30, 'image_url_here'),
+('山形牛', '肉', '山形県', 6000, 20, 'image_url_here'),
+('冷やしラーメン', '麺', '山形県', 900, 60, 'image_url_here'),
+('だだちゃ豆ゼリー', 'スイーツ', '山形県', 400, 150, 'image_url_here');
+
+INSERT INTO ItemTable (item_name, item_category, item_prefecture, item_price, item_stock, item_image) VALUES
+('コシヒカリ', '米・パン', '福島県', 3000, 100, 'image_url_here'),
+('桃', '果物', '福島県', 1000, 90, 'image_url_here'),
+('イワナ', '魚', '福島県', 1500, 50, 'image_url_here'),
+('白菜', '野菜', '福島県', 400, 150, 'image_url_here'),
+('大七', '酒', '福島県', 2200, 60, 'image_url_here');
+
+INSERT INTO ItemTable (item_name, item_category, item_prefecture, item_price, item_stock, item_image) VALUES
+('常陸牛', '肉', '茨城県', 3000, 50, 'image_url_here'),
+('あんこう', '魚', '茨城県', 2000, 30, 'image_url_here'),
+('干し芋', '野菜', '茨城県', 800, 100, 'image_url_here'),
+('メロン', '果物', '茨城県', 1500, 60, 'image_url_here'),
+('水戸の梅酒', '酒', '茨城県', 1200, 40, 'image_url_here');
+
+INSERT INTO ItemTable (item_name, item_category, item_prefecture, item_price, item_stock, item_image) VALUES
+('とちおとめ', '果物', '栃木県', 900, 80, 'image_url_here'),
+('コシヒカリ', '米・パン', '栃木県', 2500, 90, 'image_url_here'),
+('佐野ラーメン', '麺', '栃木県', 1000, 70, 'image_url_here'),
+('レモン牛乳', 'スイーツ', '栃木県', 400, 120, 'image_url_here'),
+('栃木和牛', '肉', '栃木県', 4500, 30, 'image_url_here');
+
+INSERT INTO ItemTable (item_name, item_category, item_prefecture, item_price, item_stock, item_image) VALUES
+('上州牛', '肉', '群馬県', 4000, 40, 'image_url_here'),
+('下仁田ねぎ', '野菜', '群馬県', 500, 150, 'image_url_here'),
+('ひもかわうどん', '麺', '群馬県', 900, 60, 'image_url_here'),
+('ぐんま名月', '果物', '群馬県', 800, 70, 'image_url_here'),
+('群馬の日本酒', '酒', '群馬県', 1800, 50, 'image_url_here');
+
+INSERT INTO ItemTable (item_name, item_category, item_prefecture, item_price, item_stock, item_image) VALUES
+('小江戸黒豚', '肉', '埼玉県', 3000, 50, 'image_url_here'),
+('彩の国の米', '米・パン', '埼玉県', 2200, 80, 'image_url_here'),
+('狭山茶', '飲料', '埼玉県', 1000, 90, 'image_url_here'),
+('深谷ねぎ', '野菜', '埼玉県', 700, 120, 'image_url_here'),
+('彩果の宝石', 'スイーツ', '埼玉県', 600, 110, 'image_url_here');
+
+INSERT INTO ItemTable (item_name, item_category, item_prefecture, item_price, item_stock, item_image) VALUES
+('落花生', 'その他', '千葉県', 1200, 80, 'image_url_here'),
+('房総ポーク', '肉', '千葉県', 2800, 60, 'image_url_here'),
+('キャベツ', '野菜', '千葉県', 400, 150, 'image_url_here'),
+('千葉の米', '米・パン', '千葉県', 2400, 70, 'image_url_here'),
+('ナシ', '果物', '千葉県', 900, 80, 'image_url_here');
+
+INSERT INTO ItemTable (item_name, item_category, item_prefecture, item_price, item_stock, item_image) VALUES
+('江戸前寿司', '魚', '東京都', 3500, 40, 'image_url_here'),
+('東京のクラフトビール', '飲料', '東京都', 1500, 70, 'image_url_here'),
+('東京X', '肉', '東京都', 5000, 30, 'image_url_here'),
+('東京ばな奈', 'スイーツ', '東京都', 700, 100, 'image_url_here'),
+('江戸切子', '雑貨・日用品', '東京都', 10000, 20, 'image_url_here');
+
+INSERT INTO ItemTable (item_name, item_category, item_prefecture, item_price, item_stock, item_image) VALUES
+('しらす', '魚', '神奈川県', 800, 100, 'image_url_here'),
+('湘南ポーク', '肉', '神奈川県', 3500, 40, 'image_url_here'),
+('三浦大根', '野菜', '神奈川県', 500, 150, 'image_url_here'),
+('鎌倉カスター', 'スイーツ', '神奈川県', 600, 80, 'image_url_here'),
+('箱根ビール', '飲料', '神奈川県', 1300, 60, 'image_url_here');
+
+INSERT INTO ItemTable (item_name, item_category, item_prefecture, item_price, item_stock, item_image) VALUES
+('コシヒカリ', '米・パン', '新潟県', 2500, 120, 'image_url_here'),
+('八海山', '酒', '新潟県', 2200, 50, 'image_url_here'),
+('のどぐろ', '魚', '新潟県', 4000, 30, 'image_url_here'),
+('枝豆', '野菜', '新潟県', 800, 150, 'image_url_here'),
+('笹団子', 'スイーツ', '新潟県', 600, 100, 'image_url_here');
+
+INSERT INTO ItemTable (item_name, item_category, item_prefecture, item_price, item_stock, item_image) VALUES
+('ホタルイカ', '魚', '富山県', 1500, 60, 'image_url_here'),
+('富山米', '米・パン', '富山県', 2400, 80, 'image_url_here'),
+('白エビ', 'その他', '富山県', 2000, 50, 'image_url_here'),
+('鱒の寿司', 'スイーツ', '富山県', 1200, 70, 'image_url_here'),
+('醤油', '調味料', '富山県', 500, 150, 'image_url_here');
+
+INSERT INTO ItemTable (item_name, item_category, item_prefecture, item_price, item_stock, item_image) VALUES
+('のどぐろ', '魚', '石川県', 3500, 40, 'image_url_here'),
+('加賀米', '米・パン', '石川県', 2600, 70, 'image_url_here'),
+('金沢春菊', '野菜', '石川県', 500, 100, 'image_url_here'),
+('金沢ゴーフレット', 'スイーツ', '石川県', 800, 90, 'image_url_here'),
+('天狗舞', '酒', '石川県', 2300, 60, 'image_url_here');
+
+INSERT INTO ItemTable (item_name, item_category, item_prefecture, item_price, item_stock, item_image) VALUES
+('越前ガニ', '魚', '福井県', 5000, 30, 'image_url_here'),
+('福井梅', '果物', '福井県', 1200, 80, 'image_url_here'),
+('若狭牛', '肉', '福井県', 4500, 50, 'image_url_here'),
+('そば', '麺', '福井県', 800, 100, 'image_url_here'),
+('越前塗', '雑貨・日用品', '福井県', 7000, 20, 'image_url_here');
+
+INSERT INTO ItemTable (item_name, item_category, item_prefecture, item_price, item_stock, item_image) VALUES
+('甲州ワイン', '酒', '山梨県', 3000, 60, 'image_url_here'),
+('桃', '果物', '山梨県', 1200, 90, 'image_url_here'),
+('ぶどう', '果物', '山梨県', 1500, 80, 'image_url_here'),
+('信玄餅', 'スイーツ', '山梨県', 600, 110, 'image_url_here'),
+('ほうとう', '麺', '山梨県', 1000, 70, 'image_url_here');
+
+INSERT INTO ItemTable (item_name, item_category, item_prefecture, item_price, item_stock, item_image) VALUES
+('信州そば', '麺', '長野県', 900, 100, 'image_url_here'),
+('りんご', '果物', '長野県', 800, 120, 'image_url_here'),
+('野沢菜', '野菜', '長野県', 500, 150, 'image_url_here'),
+('馬刺し', '肉', '長野県', 4000, 40, 'image_url_here'),
+('ワイン', '酒', '長野県', 2500, 50, 'image_url_here');
+
+INSERT INTO ItemTable (item_name, item_category, item_prefecture, item_price, item_stock, item_image) VALUES
+('飛騨牛', '肉', '岐阜県', 6000, 30, 'image_url_here'),
+('鮎', '魚', '岐阜県', 2000, 60, 'image_url_here'),
+('栗きんとん', 'スイーツ', '岐阜県', 800, 100, 'image_url_here'),
+('朴葉味噌', '調味料', '岐阜県', 700, 80, 'image_url_here'),
+('白川茶', '飲料', '岐阜県', 1200, 90, 'image_url_here');
+
+INSERT INTO ItemTable (item_name, item_category, item_prefecture, item_price, item_stock, item_image) VALUES
+('うなぎ', '魚', '静岡県', 3500, 40, 'image_url_here'),
+('お茶', '飲料', '静岡県', 1000, 120, 'image_url_here'),
+('みかん', '果物', '静岡県', 700, 100, 'image_url_here'),
+('わさび', '調味料', '静岡県', 900, 80, 'image_url_here'),
+('桜エビ', '魚', '静岡県', 1500, 70, 'image_url_here');
+
+INSERT INTO ItemTable (item_name, item_category, item_prefecture, item_price, item_stock, item_image) VALUES
+('ひつまぶし', '魚', '愛知県', 4000, 50, 'image_url_here'),
+('味噌カツ', '肉', '愛知県', 1200, 90, 'image_url_here'),
+('きしめん', '麺', '愛知県', 800, 100, 'image_url_here'),
+('あんまき', 'スイーツ', '愛知県', 600, 110, 'image_url_here'),
+('八丁味噌', '調味料', '愛知県', 500, 80, 'image_url_here');
+
+INSERT INTO ItemTable (item_name, item_category, item_prefecture, item_price, item_stock, item_image) VALUES
+('松阪牛', '肉', '三重県', 7000, 30, 'image_url_here'),
+('伊勢海老', '魚', '三重県', 5000, 40, 'image_url_here'),
+('赤福', 'スイーツ', '三重県', 700, 150, 'image_url_here'),
+('伊勢うどん', '麺', '三重県', 900, 80, 'image_url_here'),
+('真珠', '雑貨・日用品', '三重県', 10000, 20, 'image_url_here');
+
+INSERT INTO ItemTable (item_name, item_category, item_prefecture, item_price, item_stock, item_image) VALUES
+('近江牛', '肉', '滋賀県', 5500, 40, 'image_url_here'),
+('鮒寿司', '魚', '滋賀県', 3000, 60, 'image_url_here'),
+('信楽焼', '雑貨・日用品', '滋賀県', 8000, 20, 'image_url_here'),
+('赤こんにゃく', 'その他', '滋賀県', 500, 100, 'image_url_here'),
+('日野菜', '野菜', '滋賀県', 700, 110, 'image_url_here');
+
+INSERT INTO ItemTable (item_name, item_category, item_prefecture, item_price, item_stock, item_image) VALUES
+('湯葉', 'その他', '京都府', 1200, 90, 'image_url_here'),
+('抹茶', '飲料', '京都府', 1500, 100, 'image_url_here'),
+('京野菜', '野菜', '京都府', 800, 110, 'image_url_here'),
+('八つ橋', 'スイーツ', '京都府', 600, 130, 'image_url_here'),
+('丹波黒豆', 'その他', '京都府', 1000, 80, 'image_url_here');
+
+INSERT INTO ItemTable (item_name, item_category, item_prefecture, item_price, item_stock, item_image) VALUES
+('たこ焼き', 'その他', '大阪府', 500, 150, 'image_url_here'),
+('串カツ', '肉', '大阪府', 800, 120, 'image_url_here'),
+('蓬莱豚まん', '肉', '大阪府', 600, 140, 'image_url_here'),
+('いか焼き', '魚', '大阪府', 400, 160, 'image_url_here'),
+('大阪寿司', '米・パン', '大阪府', 1000, 90, 'image_url_here');
+
+INSERT INTO ItemTable (item_name, item_category, item_prefecture, item_price, item_stock, item_image) VALUES
+('神戸牛', '肉', '兵庫県', 8000, 20, 'image_url_here'),
+('明石鯛', '魚', '兵庫県', 3500, 40, 'image_url_here'),
+('淡路島玉ねぎ', '野菜', '兵庫県', 700, 120, 'image_url_here'),
+('灘の酒', '酒', '兵庫県', 2500, 60, 'image_url_here'),
+('神戸プリン', 'スイーツ', '兵庫県', 800, 100, 'image_url_here');
+
+INSERT INTO ItemTable (item_name, item_category, item_prefecture, item_price, item_stock, item_image) VALUES
+('柿の葉寿司', '米・パン', '奈良県', 900, 70, 'image_url_here'),
+('奈良漬け', '調味料', '奈良県', 600, 100, 'image_url_here'),
+('大和芋', '野菜', '奈良県', 800, 110, 'image_url_here'),
+('三輪そうめん', '麺', '奈良県', 700, 120, 'image_url_here'),
+('葛餅', 'スイーツ', '奈良県', 500, 130, 'image_url_here');
+
+INSERT INTO ItemTable (item_name, item_category, item_prefecture, item_price, item_stock, item_image) VALUES
+('梅干し', '調味料', '和歌山県', 1200, 90, 'image_url_here'),
+('マグロ', '魚', '和歌山県', 3000, 50, 'image_url_here'),
+('みかん', '果物', '和歌山県', 700, 100, 'image_url_here'),
+('那智黒飴', 'スイーツ', '和歌山県', 600, 110, 'image_url_here'),
+('しらす', '魚', '和歌山県', 800, 120, 'image_url_here');
+
+INSERT INTO ItemTable (item_name, item_category, item_prefecture, item_price, item_stock, item_image) VALUES
+('松葉ガニ', '魚', '鳥取県', 6000, 30, 'image_url_here'),
+('二十世紀梨', '果物', '鳥取県', 1500, 80, 'image_url_here'),
+('砂丘ラッキョウ', '野菜', '鳥取県', 500, 110, 'image_url_here'),
+('大山ハム', '肉', '鳥取県', 1200, 90, 'image_url_here'),
+('鬼太郎グッズ', '雑貨・日用品', '鳥取県', 2000, 70, 'image_url_here');
+
+INSERT INTO ItemTable (item_name, item_category, item_prefecture, item_price, item_stock, item_image) VALUES
+('出雲そば', '麺', '島根県', 900, 100, 'image_url_here'),
+('しじみ', '魚', '島根県', 1200, 90, 'image_url_here'),
+('松江和菓子', 'スイーツ', '島根県', 800, 110, 'image_url_here'),
+('あご野焼', '調味料', '島根県', 600, 80, 'image_url_here'),
+('出雲大社のお守り', '雑貨・日用品', '島根県', 1500, 50, 'image_url_here');
+
+INSERT INTO ItemTable (item_name, item_category, item_prefecture, item_price, item_stock, item_image) VALUES
+('マスカット', '果物', '岡山県', 3000, 70, 'image_url_here'),
+('白桃', '果物', '岡山県', 2000, 90, 'image_url_here'),
+('千屋牛', '肉', '岡山県', 5000, 40, 'image_url_here'),
+('ばら寿司', '米・パン', '岡山県', 1200, 60, 'image_url_here'),
+('きびだんご', 'スイーツ', '岡山県', 600, 120, 'image_url_here');
+
+INSERT INTO ItemTable (item_name, item_category, item_prefecture, item_price, item_stock, item_image) VALUES
+('広島風お好み焼き', '米・パン', '広島県', 900, 80, 'image_url_here'),
+('カキ', '魚', '広島県', 2500, 70, 'image_url_here'),
+('レモン', '果物', '広島県', 600, 100, 'image_url_here'),
+('もみじ饅頭', 'スイーツ', '広島県', 500, 130, 'image_url_here'),
+('日本酒', '酒', '広島県', 2000, 50, 'image_url_here');
+
+INSERT INTO ItemTable (item_name, item_category, item_prefecture, item_price, item_stock, item_image) VALUES
+('ふぐ', '魚', '山口県', 6000, 30, 'image_url_here'),
+('岩国寿司', '米・パン', '山口県', 1000, 80, 'image_url_here'),
+('夏みかん', '果物', '山口県', 800, 100, 'image_url_here'),
+('かまぼこ', 'スイーツ', '山口県', 700, 120, 'image_url_here'),
+('瓦そば', '麺', '山口県', 900, 60, 'image_url_here');
+
+INSERT INTO ItemTable (item_name, item_category, item_prefecture, item_price, item_stock, item_image) VALUES
+('すだち', '果物', '徳島県', 400, 150, 'image_url_here'),
+('阿波尾鶏', '肉', '徳島県', 3000, 50, 'image_url_here'),
+('鳴門金時', '野菜', '徳島県', 600, 120, 'image_url_here'),
+('徳島ラーメン', '麺', '徳島県', 800, 80, 'image_url_here'),
+('竹ちくわ', 'スイーツ', '徳島県', 700, 100, 'image_url_here');
+
+INSERT INTO ItemTable (item_name, item_category, item_prefecture, item_price, item_stock, item_image) VALUES
+('讃岐うどん', '麺', '香川県', 500, 180, 'image_url_here'),
+('オリーブ', '果物', '香川県', 1200, 80, 'image_url_here'),
+('骨付鶏', '肉', '香川県', 2000, 60, 'image_url_here'),
+('しょうゆ豆', '調味料', '香川県', 500, 100, 'image_url_here'),
+('小豆島の素麺', '麺', '香川県', 700, 90, 'image_url_here');
+
+INSERT INTO ItemTable (item_name, item_category, item_prefecture, item_price, item_stock, item_image) VALUES
+('みかん', '果物', '愛媛県', 500, 150, 'image_url_here'),
+('鯛めし', '米・パン', '愛媛県', 1200, 80, 'image_url_here'),
+('今治タオル', '雑貨・日用品', '愛媛県', 2000, 50, 'image_url_here'),
+('じゃこ天', '魚', '愛媛県', 600, 100, 'image_url_here'),
+('伯方の塩', '調味料', '愛媛県', 400, 120, 'image_url_here');
+
+INSERT INTO ItemTable (item_name, item_category, item_prefecture, item_price, item_stock, item_image) VALUES
+('カツオのたたき', '魚', '高知県', 2000, 60, 'image_url_here'),
+('文旦', '果物', '高知県', 1000, 80, 'image_url_here'),
+('土佐和牛', '肉', '高知県', 5000, 30, 'image_url_here'),
+('四万十川のり', '調味料', '高知県', 500, 90, 'image_url_here'),
+('芋けんぴ', 'スイーツ', '高知県', 400, 140, 'image_url_here');
+
+INSERT INTO ItemTable (item_name, item_category, item_prefecture, item_price, item_stock, item_image) VALUES
+('明太子', '魚', '福岡県', 1500, 100, 'image_url_here'),
+('博多ラーメン', '麺', '福岡県', 800, 150, 'image_url_here'),
+('八女茶', '飲料', '福岡県', 1000, 70, 'image_url_here'),
+('もつ鍋', '肉', '福岡県', 2500, 50, 'image_url_here'),
+('鶏卵素麺', 'スイーツ', '福岡県', 700, 90, 'image_url_here');
+
+INSERT INTO ItemTable (item_name, item_category, item_prefecture, item_price, item_stock, item_image) VALUES
+('佐賀牛', '肉', '佐賀県', 6000, 30, 'image_url_here'),
+('いちご', '果物', '佐賀県', 1200, 80, 'image_url_here'),
+('有明海苔', '調味料', '佐賀県', 500, 120, 'image_url_here'),
+('呼子のイカ', '魚', '佐賀県', 1500, 60, 'image_url_here'),
+('伊万里焼', '雑貨・日用品', '佐賀県', 7000, 20, 'image_url_here');
+
+INSERT INTO ItemTable (item_name, item_category, item_prefecture, item_price, item_stock, item_image) VALUES
+('カステラ', 'スイーツ', '長崎県', 1000, 100, 'image_url_here'),
+('ちゃんぽん', '麺', '長崎県', 900, 80, 'image_url_here'),
+('五島うどん', '麺', '長崎県', 700, 90, 'image_url_here'),
+('対馬の鮮魚', '魚', '長崎県', 2000, 70, 'image_url_here'),
+('長崎和牛', '肉', '長崎県', 4000, 50, 'image_url_here');
+
+INSERT INTO ItemTable (item_name, item_category, item_prefecture, item_price, item_stock, item_image) VALUES
+('馬刺し', '肉', '熊本県', 3500, 40, 'image_url_here'),
+('辛子蓮根', 'スイーツ', '熊本県', 600, 110, 'image_url_here'),
+('すいか', '果物', '熊本県', 1500, 60, 'image_url_here'),
+('天草の塩', '調味料', '熊本県', 400, 130, 'image_url_here'),
+('ラーメン', '麺', '熊本県', 800, 100, 'image_url_here');
+
+INSERT INTO ItemTable (item_name, item_category, item_prefecture, item_price, item_stock, item_image) VALUES
+('とり天', '肉', '大分県', 700, 120, 'image_url_here'),
+('かぼす', '果物', '大分県', 400, 140, 'image_url_here'),
+('関サバ', '魚', '大分県', 2500, 60, 'image_url_here'),
+('椎茸', '野菜', '大分県', 800, 100, 'image_url_here'),
+('豊後牛', '肉', '大分県', 5000, 40, 'image_url_here');
+
+INSERT INTO ItemTable (item_name, item_category, item_prefecture, item_price, item_stock, item_image) VALUES
+('宮崎牛', '肉', '宮崎県', 6000, 30, 'image_url_here'),
+('日向夏', '果物', '宮崎県', 1000, 80, 'image_url_here'),
+('地鶏炭火焼', '肉', '宮崎県', 1200, 60, 'image_url_here'),
+('マンゴー', '果物', '宮崎県', 3000, 50, 'image_url_here'),
+('チキン南蛮', '肉', '宮崎県', 900, 100, 'image_url_here');
+
+INSERT INTO ItemTable (item_name, item_category, item_prefecture, item_price, item_stock, item_image) VALUES
+('黒豚', '肉', '鹿児島県', 4000, 40, 'image_url_here'),
+('さつま揚げ', 'スイーツ', '鹿児島県', 700, 110, 'image_url_here'),
+('紫芋', '野菜', '鹿児島県', 500, 120, 'image_url_here'),
+('黒酢', '調味料', '鹿児島県', 800, 100, 'image_url_here'),
+('鰹節', '魚', '鹿児島県', 900, 90, 'image_url_here');
+
+INSERT INTO ItemTable (item_name, item_category, item_prefecture, item_price, item_stock, item_image) VALUES
+('ゴーヤ', '野菜', '沖縄県', 400, 150, 'image_url_here'),
+('シークヮーサー', '果物', '沖縄県', 600, 130, 'image_url_here'),
+('沖縄そば', '麺', '沖縄県', 700, 120, 'image_url_here'),
+('ラフテー', '肉', '沖縄県', 1500, 80, 'image_url_here'),
+('泡盛', '酒', '沖縄県', 2000, 70, 'image_url_here');

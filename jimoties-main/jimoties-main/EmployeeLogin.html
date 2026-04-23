@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>ログイン</title>
+  <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css'>
+<link rel='stylesheet' href='https://unpkg.com/@mdi/font@6.x/css/materialdesignicons.min.css'>
+<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900'><link rel="stylesheet" href="./EmployeeLogin.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<div id="app">
+  <v-app>
+    <v-container fill-height fluid>
+       <v-row align="center" justify="center">
+         <v-col cols="12" sm="8" md="4">
+           <v-card class="login-container">
+             <v-card-title>
+               <div class="login-header">
+                 <h1>　管理者用ログイン</h1>
+               </div>
+             </v-card-title>
+             
+             <v-card-subtitle>
+              <v-form @submit.prevent="login">
+                <v-text-field
+                  v-model="employee_ID" 
+                  label="Employee ID" 
+                  color="black"
+                  required 
+                ></v-text-field>
+                <v-text-field
+                  v-model="employee_password" 
+                  label="Password" 
+                  type="password"
+                  color="black"
+                  required 
+                ></v-text-field>
+                <div class="button-container">
+                  <v-btn 
+                    type="submit"
+                    color="#d1d1d1"
+                    style="border: 1px solid black;"
+                  >ログイン</v-btn>
+                </div>
+              </v-form>
+              <br>
+               
+              <div class="back-to-home">
+                <a href="index.html">トップページに戻る</a>
+              </div>
+             </v-card-subtitle>
+           </v-card>
+         </v-col>
+       </v-row>
+    </v-container>
+  </v-app>
+</div>
+<!-- partial -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.11/vue.min.js'></script>
+<script src='https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/axios/1.7.2/axios.min.js'></script><script  src="./EmployeeLogin.js"></script>
+
+</body>
+</html>

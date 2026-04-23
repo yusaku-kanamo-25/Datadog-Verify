@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>キーワード検索</title>
+  <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
+  <link href="https://unpkg.com/@mdi/font@6.x/css/materialdesignicons.min.css" rel="stylesheet">
+  <link href="https://unpkg.com/vuetify@2.7.1/dist/vuetify.min.css" rel="stylesheet">
+  <style>
+    .header, .footer {
+      background-color: #f5f5f5;
+      padding: 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .header-subtitle {
+      font-family: 'serif';
+      font-size: 16px;
+      font-weight: normal;
+      color: #7b9e7a;
+      margin-left: 10px;
+    }
+    .header-left {
+      display: flex;
+      align-items: center;
+    }
+    .header-title {
+      font-family: 'serif';
+      font-size: 24px;
+      font-weight: bold;
+      color: #7b9e7a;
+      display: flex;
+      align-items: center;
+    }
+    .header-title .mdi-icon {
+      margin-right: 10px;
+      font-size: 40px;
+      color: #7b9e7a;
+    }
+    .header-right {
+      display: flex;
+      align-items: center;
+    }
+    .header-right .v-btn {
+      margin-left: 10px;
+      color: #7b9e7a;
+    }
+    .navbar {
+      margin-top: 10px;
+    }
+    .navbar .v-btn {
+      color: #7b9e7a;
+      font-weight: bold;
+    }
+    .icon-button {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 4px;
+      padding: 4px;
+      color: #7b9e7a;
+      text-transform: none;
+      min-width: 50px;
+      padding: 8px 16px;
+    }
+    .icon-button v-icon {
+      font-size: 24px;
+      margin-bottom: 2px;
+    }
+    .icon-button span {
+      font-size: 11px;
+    }
+    .search-container {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      margin-top: 20px;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+      position: relative;
+      z-index: 10;
+      background-color: #fff;
+      padding: 10px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+    }
+    .search-field {
+      flex: 1;
+      margin-right: 10px;
+    }
+    .search-btn {
+      background-color: #7b9e7a !important;
+      color: white !important;
+      box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+      border-radius: 4px;
+      padding: 8px 16px;
+      font-weight: bold;
+      text-transform: none;
+    }
+    .footer {
+      background-color: #e0f0e6;
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: #7b9e7a;
+      font-size: 14px;
+    }
+    .admin-login-btn {
+      color: #7b9e7a;
+      text-decoration: underline;
+      cursor: pointer;
+    }
+    .product-list {
+      margin-top: 20px;
+    }
+    .product-card {
+      margin: 10px;
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      text-align: center;
+      cursor: pointer;
+      transition: box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
+    }
+    .product-card:hover {
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      transform: scale(1.05);
+    }
+    .product-card img {
+      max-width: 100%;
+      height: auto;
+      margin-bottom: 10px;
+    }
+    .product-card .v-card__title {
+      color: #7b9e7a !important;
+      text-align: center !important;
+      font-size: 20px;
+      margin-bottom: 15px;
+      display: block;
+    }
+    .product-card .v-card__subtitle {
+      color: #7b9e7a !important;
+      font-size: 18px;
+      text-align: center;
+    }
+    .product-list-title {
+      font-size: 20px;
+      font-weight: bold;
+      color: #7b9e7a;
+      text-align: center;
+      margin-top: 40px;
+      margin-bottom: 10px;
+    }
+    .sort-select {
+      width: 200px;
+      margin-right: auto;
+      margin-left: auto;
+      margin-top: 50px;
+    }
+  </style>
+</head>
+<body>
+  <div id="app">
+    <v-app>
+      <div class="header">
+        <div class="header-left">
+          <div class="header-title">
+            <v-icon class="mdi-icon">mdi-home-city-outline</v-icon>
+            ジモティーズ
+            <span class="header-subtitle">－日本全国の名産品セレクトショップ－</span>
+          </div>
+        </div>
+        <div class="header-right">
+          <template v-if="userId">
+            <v-btn @click="goHome" text color="#7b9e7a">ホーム</v-btn>
+            <v-btn @click="logout" text color="#7b9e7a">ログアウト</v-btn>
+          </template>
+          <template v-else>
+            <v-btn @click="goHome" text color="#7b9e7a">ホーム</v-btn>
+            <v-btn @click="goLogin" text color="#7b9e7a">ログイン・新規登録</v-btn>
+          </template>
+        </div>
+      </div>
+      <v-toolbar flat class="navbar">
+        <template v-if="userId">
+          <v-spacer></v-spacer>
+          <v-btn class="icon-button" flat @click="goMypage">
+            <v-icon>mdi-account</v-icon>
+            <span>マイページ</span>
+          </v-btn>
+          <v-btn class="icon-button" flat @click="goFavorite">
+            <v-icon>mdi-heart</v-icon>
+            <span>お気に入り</span>
+          </v-btn>
+          <v-btn class="icon-button" flat @click="goCart">
+            <v-icon>mdi-cart</v-icon>
+            <span>カート</span>
+          </v-btn>
+        </template>
+      </v-toolbar>
+
+      <v-main>
+        <v-container>
+          <div class="search-container">
+            <v-text-field
+              v-model="keyword"
+              placeholder="名産品のキーワードから探す"
+              hide-details
+              solo
+              dense
+              flat
+              class="search-field"
+            ></v-text-field>
+            <v-btn class="search-btn" @click="searchItems">検索</v-btn>
+          </div>
+
+          <!-- ソート機能の追加 -->
+          <div v-if="products.length > 0" class="sort-container" style="text-align: center; margin-top: 10px;">
+            <v-select
+              class="sort-select"
+              v-model="sortOption"
+              :items="sortOptions"
+              label="並び替え"
+              hide-details
+              dense
+            ></v-select>
+          </div>
+
+          <!-- 名産品リストのタイトル -->
+          <h2 v-if="products.length > 0" class="product-list-title">名産品リスト</h2>
+
+          <!-- 名産品リスト -->
+          <div class="product-list" v-if="products.length > 0">
+            <v-row>
+              <v-col v-for="product in products" :key="product.id" cols="12" sm="6" md="4">
+                <v-card class="product-card" @click="goToProductDetail(product.name)">
+                  <v-img :src="product.image" height="150"></v-img>
+                  <v-card-title>{{ product.name }}</v-card-title>
+                  <v-card-subtitle>産地: {{ product.region }}</v-card-subtitle>
+                  <v-card-subtitle>{{ product.price ? product.price + '円' : '未設定' }}</v-card-subtitle>
+                </v-card>
+              </v-col>
+            </v-row>
+          </div>
+
+          <div v-if="message">{{ message }}</div>
+        </v-container>
+      </v-main>
+
+      <v-footer class="footer">
+        &copy; 2024 ジモティーズ. All rights reserved.
+        <v-btn text class="admin-login-btn" @click="goAdminLogin">管理者はこちらから</v-btn>
+      </v-footer>
+    </v-app>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vuetify@2.6.12/dist/vuetify.js"></script>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script>
+    new Vue({
+      el: '#app',
+      vuetify: new Vuetify(),
+      data() {
+        return {
+          userId: null,
+          keyword: '',
+          products: [],
+          message: '',
+          sortOption: null,  // ソートオプション
+          sortOptions: [
+            { text: '金額が低い順', value: 'priceAsc' },
+            { text: '金額が高い順', value: 'priceDesc' },
+            { text: '人気順', value: 'popularity' }  // 人気順の追加
+          ],
+        };
+      },
+
+      mounted() {
+        const storedUserId = sessionStorage.getItem('user_ID');
+        if (storedUserId) {
+          this.userId = storedUserId;
+        } else {
+          console.log('保存なし');
+        }
+      },
+
+      watch: {
+        sortOption(newValue) {
+          if (newValue === 'priceAsc') {
+            this.products.sort((a, b) => a.price - b.price);
+          } else if (newValue === 'priceDesc') {
+            this.products.sort((a, b) => b.price - a.price);
+          } else if (newValue === 'popularity') {
+            this.sortByPopularity();  // 人気順のソートを呼び出す
+          }
+        }
+      },
+
+      methods: {
+        goHome() {
+          window.location.href = 'index.html';
+        },
+        goLogin() {
+          window.location.href = 'UserLogin.html';
+        },
+        goMypage() {
+          window.location.href = 'Mypage.html';
+        },
+        goFavorite() {
+          window.location.href = 'Favorite.html';
+        },
+        goCart() {
+          window.location.href = 'Shoplist.html';
+        },
+        goToProductDetail(productName) {
+          window.location.href = `ItemDetail.html?name=${encodeURIComponent(productName)}`;
+        },
+        goAdminLogin() {
+          window.location.href = 'EmployeeLogin.html';
+        },
+
+        logout() {
+          sessionStorage.removeItem('user_ID');
+          window.location.href = `UserLogin.html`;
+        },
+
+        async searchItems() {
+          try {
+            const response = await axios.get('https://m3h-minaki-jimoties.azurewebsites.net/api/SearchItemName', {
+              params: { Item_name: this.keyword.trim() } // 検索キーワードをトリム
+            });
+            if (response.data && response.data.ItemTableList && response.data.ItemTableList.length > 0) {
+              this.products = response.data.ItemTableList.map(product => ({
+                id: product.Item_ID,
+                name: product.Item_name.trim(), // 商品名をトリム
+                price: product.Item_price || '未設定',
+                image: product.Item_image || 'https://via.placeholder.com/150',  // デフォルト画像
+                region: product.Item_prefecture
+              }));
+              this.message = '';
+            } else {
+              this.message = '一致する商品がありません';
+              this.products = [];
+            }
+          } catch (error) {
+            console.error('検索エラー:', error);
+            this.message = 'エラーが発生しました。再度お試しください。';
+          }
+        },
+
+        async sortByPopularity() {
+          try {
+            const response = await axios.get('https://m3h-minaki-jimoties.azurewebsites.net/api/Ranking');
+            if (response.data && response.data.List && response.data.List.length > 0) {
+              const sortedProducts = response.data.List.map(item => ({
+                name: item.Item_name.trim().toLowerCase(), // 商品名をトリムして小文字に変換
+                totalQuantity: item.Total_quantity
+              }));
+
+              console.log("Sorted Products from API:", sortedProducts); // デバッグ用
+
+              // 商品名が一致しているか確認しつつ、人気順でマッチング
+              this.products = this.products.map(product => {
+                const foundItem = sortedProducts.find(item => item.name === product.name.trim().toLowerCase());
+                return foundItem ? { ...product, totalQuantity: foundItem.totalQuantity } : product;
+              });
+
+              // 売れた個数の降順でソート
+              this.products.sort((a, b) => (b.totalQuantity || 0) - (a.totalQuantity || 0));
+              this.message = '';
+            } else {
+              this.message = '人気順データがありません';
+            }
+          } catch (error) {
+            console.error('人気順ソートエラー:', error);
+            this.message = 'エラーが発生しました。再度お試しください。';
+          }
+        }
+      }
+    });
+  </script>
+</body>
+</html>

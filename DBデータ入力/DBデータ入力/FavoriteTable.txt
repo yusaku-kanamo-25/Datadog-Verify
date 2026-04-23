@@ -1,0 +1,2 @@
+INSERT INTO FavoriteTable (user_ID, item_ID) VALUES
+(1, 2);

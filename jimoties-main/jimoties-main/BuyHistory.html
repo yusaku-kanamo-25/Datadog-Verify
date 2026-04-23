@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>購入履歴</title>
+  
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ジモティーズ</title>
+
+  <!-- VuetifyとMaterial Design IconsのCDNリンク -->
+  <link href="https://cdn.jsdelivr.net/npm/@mdi/font/css/materialdesignicons.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/vuetify@2.6.12/dist/vuetify.min.css" rel="stylesheet">
+</head>
+<body>
+  <div id="app">
+    <v-app style="background-color: white;">
+      <div class="header">
+        <div class="header-left">
+          <div class="header-title">
+            <v-icon class="mdi-icon">mdi-home-city-outline</v-icon>
+            ジモティーズ
+          </div>
+        </div>
+        <div class="header-right">
+          <!-- ホームに戻るボタンの追加 -->
+          <v-btn text color="#7b9e7a" @click="goHome">ホーム</v-btn>
+          <v-btn @click="logout" text color="#7b9e7a">ログアウト</v-btn>
+        </div>
+      </div>
+      <!-- 題名バー -->
+      <v-app-bar color="#7b9e7a" dark dense class="custom-app-bar">
+        <v-toolbar-title style="font-size: 20px;">購入履歴</v-toolbar-title>
+      </v-app-bar>
+      <br><br>
+      <!-- メインコンテンツ -->
+      <v-main>
+        <v-container class="v-container-main" style="background-color: white;">
+          <v-data-table
+            :headers="headers"
+            :items="desserts"
+            :items-per-page="itemsPerPage"
+            item-key="id"
+            class="elevation-1"
+            :disable-sort="true"
+            hide-default-footer
+          >
+            
+
+            <template v-slot:item="{ item }">
+              <tr>
+                <td>
+                  {{ item.Buy_date }}
+                </td>
+                <td>
+                  <img :src="item.Item_image" alt="商品画像" width="100" />
+                </td>
+                <td>{{ item.Item_name }}</td>
+                <td>{{ item.Item_prefecture }}</td>
+                <td>{{ item.Item_num }}</td>
+                <td>{{ item.Item_price }}</td>
+              </tr>
+            </template>
+
+            <!-- カスタムフッターで合計金額を表示 -->
+            
+            
+          </v-data-table>
+        </v-container>
+
+        <!-- 合計金額のバーの下にボタンを追加 -->
+        <v-container class="text-center" style="padding: 16px;">
+          <v-btn @click="back" class="custom-back-btn" style="background-color: red; color: white; margin-right: 10px;">
+            戻る
+          </v-btn>
+          
+        </v-container>
+      </v-main>
+
+      <!-- フッター -->
+      <v-footer class="footer">
+        &copy; 2024 ジモティーズ. All rights reserved.
+        <v-btn text class="admin-login-btn" @click="adminLogin">管理者はこちらから</v-btn>
+      </v-footer>
+    </v-app>
+  </div>
+
+  <style>
+    .header {
+      background-color: #f5f5f5;
+      padding: 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .header-left {
+      display: flex;
+      align-items: center;
+    }
+    .header-title {
+      font-family: 'serif';
+      font-size: 24px;
+      font-weight: bold;
+      color: #7b9e7a;
+      display: flex;
+      align-items: center;
+    }
+    .header-title .mdi-icon {
+      margin-right: 10px;
+      font-size: 40px;
+      color: #7b9e7a;
+    }
+    .header-right {
+      display: flex;
+      align-items: center;
+    }
+    .header-right .v-btn {
+      margin-left: 10px;
+      color: #7b9e7a;
+    }
+    .navbar {
+      margin-top: 10px;
+    }
+    .navbar .v-btn {
+      color: #7b9e7a;
+      font-weight: bold;
+    }
+    .search-box {
+      display: flex;
+      align-items: center;
+      margin-right: 20px;
+      width: 400px;
+    }
+    .icon-button {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 0;
+      padding: 4px;
+      color: #7b9e7a;
+      text-transform: none;
+      min-width: 50px;
+      padding: 8px 16px;
+    }
+    .icon-button v-icon {
+      font-size: 24px;
+      margin-bottom: 2px;
+    }
+    .icon-button span {
+      font-size: 11px;
+    }
+    .mdi-icon {
+      font-size: 40px !important;
+      color: #7b9e7a !important;
+    }
+    .footer {
+      background-color: #e0f0e6;
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: #7b9e7a;
+      font-size: 14px;
+      height: 75px;
+    }
+    .admin-login-btn {
+      color: #7b9e7a;
+      text-decoration: underline;
+      cursor: pointer;
+    }
+    .search-btn {
+      background-color: #7b9e7a !important; 
+      color: white !important; 
+      box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2); 
+      border-radius: 4px; 
+      padding: 8px 16px; 
+      font-weight: bold; 
+      text-transform: none; 
+    }
+    .button-group {
+      justify-content: center; /* ボタンを中央に配置 */
+      display: flex;
+      gap: 20px;
+      position: relative;
+      margin-top: 20px;
+      margin-bottom: 30px; /* カルーセルとの間にスペースを追加 */
+    }
+    .v-container {
+      background-color: #f5f5f5;
+    }
+    .v-container-main {
+      margin-bottom: 60px !important; /* テーブルと合計金額バーの間に余白を追加 */ 
+    }
+    .custom-app-bar {
+      max-height: 50px !important;
+      padding: 0 16px;
+    }
+    .v-toolbar-title {
+      line-height: 30px !important;
+    }
+    .v-data-table {
+      border-collapse: collapse;
+    }
+    .v-data-table th,
+    .v-data-table td {
+      border: 1px solid #cccccc !important; /* 下線を含むすべての線を表示 */
+      text-align: center !important; /* データの中央揃え */
+      margin: auto !important;
+    }
+    .v-data-table th {
+      background-color: #7b9e7a !important; /* ヘッダーの背景色を変更 */
+      color: white !important; /* 文字色を白に設定 */
+      text-align: center !important; /* ヘッダーの中央揃え */
+      margin: auto !important;
+    }
+    .v-data-table img {
+      display: block;
+      margin: auto;
+      max-width: 100px;
+      max-height: 100px;
+      object-fit: cover;
+    }
+    .action-buttons {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    /* 合計金額バー */
+    .total-amount-bar {
+      padding: 10px;
+      background-color: #7b9e7a;
+      border-top: 1px solid #cccccc;
+      text-align: right ;
+    }
+    .total-amount-large {
+      font-size: 24px !important; /* フォントサイズを大きく設定 */
+      font-weight: bold; /* 太字に設定 */
+      color: #7b9e7a !important; /* 合計金額の色 */
+      text-align: center; /* テキストを中央揃え */
+      padding: 10px; /* 余白を追加 */
+    }
+    .custom-purchase-btn {
+      font-size: 16px !important; /* 文字の大きさを調整 */
+      padding: 10px 20px !important; /* ボタンのパディングを調整 */
+      margin: 50px;
+      background-color: #7b9e7a !important; /* ボタンの背景色を変更 */
+      color: white !important; /* ボタンの文字色を白に設定 */
+    }
+    .custom-back-btn {
+      font-size: 16px !important; /* 戻るボタンのスタイル調整 */
+      padding: 10px 20px !important; /* ボタンのパディングを調整 */
+      margin: 50px;
+      background-color: red !important; /* ボタンの背景色を赤に変更 */
+      color: white !important; /* ボタンの文字色を白に設定 */
+    }
+  </style>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vuetify@2.6.12/dist/vuetify.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script>
+    new Vue({
+      el: '#app',
+      vuetify: new Vuetify(),
+      data() {
+        return {
+          headers: [
+            { text: '購入日', value: 'date' }, // チェックボックス用
+            { text: '商品画像', value: 'img' },
+            { text: '商品名', value: 'name' },
+            { text: '産地', value: 'prefecture' },
+            { text: '個数', value: 'num' },
+            { text: '金額', value: 'price' }
+          ],
+          itemsPerPage: 10,
+          desserts: [], // 初期値は空の配列
+          selectedItems: [], // 選択されたアイテムの配列
+          userID: sessionStorage.getItem('user_ID'), // 表示したいUser_ID
+        };
+      },
+
+      mounted() {
+        this.fetchbuy();
+      },
+
+      methods: {
+        async fetchbuy() {
+          console.log("データ取得開始：");
+
+          const param = {
+            User_ID: this.userID
+          };
+
+          try {
+            console.log(`購入履歴を取得中... User_ID:`, param);
+            const response = await axios.post('https://m3h-minaki-jimoties.azurewebsites.net/api/ListBuy', param);
+
+            if (response.data && response.data.BuyTableList) {
+              this.desserts = response.data.BuyTableList; // 取得したデータを直接セット
+              console.log('取得したデータ:', this.desserts);
+            }
+              
+                  
+                } catch (error) {
+                  console.error(`Item_ID ${item.Item_ID} のデータ取得に失敗しました:`, error);
+                }
+        },
+        
+
+        adminLogin() {
+          // 管理者ログインのロジックをここに追加
+          window.location.href = `EmployeeLogin.html`
+        },
+
+        goHome() {
+          // ホームに戻る処理をここに追加
+           window.location.href = `index.html`
+        },
+      
+      
+      back(){
+      window.location.href = `Mypage.html`
+    },
+
+    logout() {
+      sessionStorage.removeItem('user_ID');
+      window.location.href = `UserLogin.html`;
+    },
+      }
+      
+    });
+  </script>
+</body>
+</html>
+<!-- partial -->
+  
+</body>
+</html>

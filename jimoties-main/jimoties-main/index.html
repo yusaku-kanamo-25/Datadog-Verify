@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>ホーム</title>
+  <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900'>
+<link rel='stylesheet' href='https://unpkg.com/@mdi/font@6.x/css/materialdesignicons.min.css'>
+<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Material+Icons'>
+<link rel='stylesheet' href='https://unpkg.com/vuetify@2.7.1/dist/vuetify.min.css'><link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<style>
+    .header {
+      background-color: #f5f5f5;
+      padding: 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .header-subtitle {
+      font-family: 'serif';
+      font-size: 16px;
+      font-weight: normal;
+      color: #7b9e7a;
+      margin-left: 10px;
+    }
+    .header-left {
+      display: flex;
+      align-items: center;
+    }
+    .header-title {
+      font-family: 'serif';
+      font-size: 24px;
+      font-weight: bold;
+      color: #7b9e7a;
+      display: flex;
+      align-items: center;
+    }
+    .header-title .mdi-icon {
+      margin-right: 10px;
+      font-size: 40px;
+      color: #7b9e7a;
+    }
+    .header-right {
+      display: flex;
+      align-items: center;
+    }
+    .header-right .v-btn {
+      margin-left: 10px;
+      color: #7b9e7a;
+    }
+    .navbar {
+      margin-top: 10px;
+    }
+    .navbar .v-btn {
+      color: #7b9e7a;
+      font-weight: bold;
+    }
+    .icon-button {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 4px;
+      padding: 4px;
+      color: #7b9e7a;
+      text-transform: none;
+      min-width: 50px;
+      padding: 8px 16px;
+    }
+    .icon-button v-icon {
+      font-size: 24px;
+      margin-bottom: 2px;
+    }
+    .icon-button span {
+      font-size: 11px;
+    }
+    .v-carousel {
+      overflow: hidden;
+    }
+    .scroll-container {
+      display: flex;
+      overflow-x: auto;
+      scroll-behavior: smooth;
+      padding: 10px 0;
+    }
+    .scroll-container::-webkit-scrollbar {
+      height: 8px;
+    }
+    .scroll-container::-webkit-scrollbar-thumb {
+      background: #7b9e7a;
+      border-radius: 10px;
+    }
+    .scroll-container::-webkit-scrollbar-track {
+      background: #f5f5f5;
+    }
+    .scroll-item {
+      flex: 0 0 auto;
+      width: 200px;
+      margin-right: 10px;
+    }
+    .scroll-item img {
+      width: 100%;
+      border-radius: 4px;
+    }
+    .scroll-item-description {
+      text-align: center;
+      font-size: 12px;
+      color: #333;
+    }
+    .footer {
+      background-color: #e0f0e6;
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: #7b9e7a;
+      font-size: 14px;
+    }
+    .admin-login-btn {
+      color: #7b9e7a;
+      text-decoration: underline;
+      cursor: pointer;
+    }
+    .search-btn {
+      background-color: #7b9e7a !important;
+      color: white !important;
+      box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+      border-radius: 4px;
+      padding: 8px 16px;
+      font-weight: bold;
+      text-transform: none;
+    }
+    .button-group {
+      justify-content: center;
+      display: flex;
+      gap: 20px;
+      position: relative;
+      margin-top: 20px;
+      margin-bottom: 30px;
+    }
+    .categories-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center;
+      position: absolute;
+      margin-top: 20px;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: white;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+      padding: 10px;
+      z-index: 10;
+    }
+    .product-title {
+      font-size: 24px;
+      font-weight: bold;
+      text-align: center;
+      margin: 20px 0;
+    }
+    .clickable-card {
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* アニメーションの設定 */
+}
+
+.clickable-card:hover {
+  transform: translateY(-5px); /* カードを少し持ち上げる */
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2); /* シャドウを追加して浮かび上がるように見せる */
+}
+  </style>
+</head>
+<body>
+  <div id="app">
+    <v-app>
+      <div class="header">
+        <div class="header-left">
+          <div class="header-title">
+            <v-icon class="mdi-icon">mdi-home-city-outline</v-icon>
+            ジモティーズ
+            <span class="header-subtitle">－日本全国の名産品セレクトショップ－</span>
+          </div>
+        </div>
+        <div class="header-right">
+           <!-- userIdが存在する場合は「ログイン済」と表示 -->
+  <template v-if="userId">
+    <v-btn @click="logout" text color="#7b9e7a">ログアウト</v-btn>
+  </template>
+  <!-- userIdが存在しない場合は「ログイン」と「新規登録」のボタンを表示 -->
+  <template v-else>
+    <v-btn @click="login" text color="#7b9e7a">ログイン・新規登録</v-btn>
+  </template>
+        </div>
+      </div>
+      <v-toolbar flat class="navbar">
+        <template v-if="userId">
+        <v-spacer></v-spacer>
+        <v-btn @click="mypage" class="icon-button" flat>
+          <v-icon>mdi-account</v-icon>
+          <span>マイページ</span>
+        </v-btn>
+        <v-btn @click="favorite" class="icon-button" flat>
+          <v-icon>mdi-heart</v-icon>
+          <span>お気に入り</span>
+        </v-btn>
+        <v-btn @click="cart" class="icon-button" flat>
+          <v-icon>mdi-cart</v-icon>
+          <span>カート</span>
+        </v-btn>
+          </template>
+      </v-toolbar>
+
+      <v-main>
+        <v-container>
+          <div class="button-group">
+            <v-btn @click="searchkey" outlined color="#7b9e7a" class="mx-2">
+              <v-icon left>mdi-magnify</v-icon>キーワードから探す
+            </v-btn>
+            <v-btn @click="category" outlined color="#7b9e7a" class="mx-2" @click="showCategories = !showCategories">
+              <v-icon left>mdi-gift</v-icon>カテゴリから探す
+            </v-btn>
+            <v-btn @click="prefecture" outlined color="#7b9e7a" class="mx-2">
+              <v-icon left>mdi-map-marker</v-icon>地域から探す
+            </v-btn>
+          </div>
+
+          <v-carousel
+            cycle
+            height="500"
+            hide-delimiter-background
+            show-arrows-on-hover
+          >
+            <v-carousel-item
+              v-for="(image, i) in images"
+              :key="i"
+            >
+              <v-sheet
+                height="100%"
+              >
+                <v-row
+                  class="fill-height"
+                  align="center"
+                  justify="center"
+                >
+                  <img :src="image" alt="slide image" style="max-width: 100%; height: auto;">  
+                </v-row>
+              </v-sheet>
+            </v-carousel-item>
+          </v-carousel>
+          
+          <br><br>
+          <template v-if="userId">
+  <div class="product-title">あなたの都道府県の名産</div>
+<div class="scroll-container">
+  <div class="scroll-item" v-for="(item, index) in scrollItems" :key="index" @click="itemClicked(item)">
+    <img :src="item.Item_image" alt="Scroll item image" class="scroll-item-image">
+    <div class="scroll-item-description">
+      <div class="item-name center-green-text">{{ item.Item_name }}</div>
+      <div class="item-price center-green-text">{{ item.Item_price }}円</div>
+    </div>
+  </div>
+</div>
+</template>
+
+          
+          <br><br>
+          <div class="product-title">おすすめ</div>
+          <v-row>
+            <v-col
+              v-for="(product, index) in products"
+              :key="index"
+              cols="12"
+              sm="6"
+              md="4"
+            >
+              <v-card @click="cardClicked(product)" class="clickable-card">
+                <v-img
+                  :src="product.image"
+                  height="200px"
+                ></v-img>
+                <v-card-title class="center-green-text">{{ product.name }}</v-card-title>
+                <v-card-subtitle class="center-green-text">{{ product.city }}</v-card-subtitle>
+                <v-card-text class="center-green-text">
+                  <div class="product-price"> {{ product.price }}円</div>
+                  
+                  
+                </v-card-text>
+              </v-card>
+            </v-col>
+          </v-row>
+
+        </v-container>
+      </v-main>
+
+      <v-footer class="footer">
+        &copy; 2024 ジモティーズ. All rights reserved.
+        <v-btn text class="admin-login-btn" @click="adminLogin">管理者はこちらから</v-btn>
+      </v-footer>
+    </v-app>
+  </div>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<!-- partial -->
+  <script src='https://unpkg.com/babel-polyfill/dist/polyfill.min.js'></script>
+<script src='https://unpkg.com/vue@2.x/dist/vue.js'></script>
+<script src='https://unpkg.com/vuetify@2.7.1/dist/vuetify.min.js'></script><script  src="./script.js"></script>
+
+</body>
+</html>

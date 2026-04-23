@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>注文確認</title>
+  <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css'>
+<link rel='stylesheet' href='https://unpkg.com/@mdi/font@6.x/css/materialdesignicons.min.css'>
+<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900'><link rel="stylesheet" href="./employeeorderstyle.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<div id="app">
+  <v-app>
+    <v-container style="position: absolute; left: 10px; padding: 0; top:10px;">
+      <v-btn 
+        color="#d1d1d1" 
+        style="width: 70px; font-weight: bold; font-size: 12px; border: 1px solid black; margin: 0;"
+        @click="goBack"
+      >
+        戻る
+      </v-btn>
+    </v-container>
+    <v-container fill-height fluid>
+      <v-row align="center" justify="center">
+        <v-col cols="12" sm="8" md="6">
+          <div class="login-header">
+            <h1 class="section-title">注文確認</h1>
+          </div>
+
+          <!-- 改良された検索フォーム -->
+          <v-form @submit.prevent="searchBuyByDate">
+            <v-menu
+              v-model="dateMenu"
+              :close-on-content-click="false"
+              transition="scale-transition"
+              offset-y
+              min-width="290px"
+              
+            >
+              <template v-slot:activator="{ on, attrs }">
+                <v-text-field
+                  v-model="selectedDate"
+                  label="日付で検索"
+                  outlined
+                  prepend-inner-icon="mdi-calendar"
+                  readonly
+                  v-bind="attrs"
+                  v-on="on"
+                ></v-text-field>
+              </template>
+              <!-- カレンダーのデザインを修正 -->
+              <v-date-picker
+                v-model="selectedDate"
+                @input="dateMenu = false"
+                color="primary"
+              ></v-date-picker>
+            </v-menu>
+            <v-btn
+              type="submit"
+              color="#d1d1d1"
+              style="margin-top: 10px; border: 1px solid black;"
+              block
+            >
+              検索
+            </v-btn>
+          </v-form>
+
+          <!-- 検索結果のカード -->
+          <v-card
+            v-if="searchResults.length > 0"
+            class="mt-4"
+            v-for="(item, index) in searchResults"
+            :key="index"
+          >
+            <v-card-title>
+              <span class="headline">{{ item.User_name }}</span>
+            </v-card-title>
+            <v-card-text>
+              <div><h3>注文商品</h3></div>
+              <div> {{ item.Item_ID }}</div>
+              <div>{{ item.Item_name }}</div>
+              <div>{{ item.Item_price.toLocaleString() }}円</div>
+              <div>数量: {{ item.Item_num }} 個</div>
+              <br>
+              <div><h3>届け先</h3></div>
+              <div> 〒{{ item.Mail }}</div>
+              <div>{{ item.Address }}</div>
+              <br>
+              <div><h3>連絡先</h3></div>
+              <div> {{ item.Telephone }}</div>
+              <div>{{ item.Email }}</div>
+              
+            </v-card-text>
+
+
+          
+          </v-card>
+        </v-col>
+      </v-row>
+    </v-container>
+  </v-app>
+</div>
+<!-- partial -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.11/vue.min.js'></script>
+<script src='https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/axios/1.7.2/axios.min.js'></script><script  src="./employeeorderscript.js"></script>
+
+</body>
+</html>

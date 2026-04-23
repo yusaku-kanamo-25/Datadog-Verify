@@ -1,0 +1,4 @@
+INSERT INTO EmployeeTable (employee_ID, employee_password) VALUES
+('E001', 'adminPass123'),
+('E002', 'managerPass456'),
+('E003', 'securePass789');

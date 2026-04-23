@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>在庫管理</title>
+  <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/vuetify@2/dist/vuetify.min.css'>
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>在庫管理</title>
+  <link href="https://cdn.jsdelivr.net/npm/vuetify@2/dist/vuetify.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/@mdi/font/css/materialdesignicons.min.css" rel="stylesheet">
+</head>
+<body>
+  <div id="app">
+    <v-app>
+      <v-container style="position: absolute; left: 10px; padding: 0; top:10px;">
+        <v-btn 
+          color="#d1d1d1" 
+          style="width: 70px; font-weight: bold; font-size: 12px; border: 1px solid black; margin: 0;"
+          @click="goBack"
+        >
+          戻る
+        </v-btn>
+      </v-container>
+      
+      <v-container fill-height fluid>
+        <v-row align="center" justify="center">
+          <v-col cols="12" sm="8" md="6">
+            <div class="login-header">
+              <h1>在庫管理</h1>
+            </div>
+
+            <!-- 改良された検索フォーム -->
+            <v-form @submit.prevent="searchItem">
+              <v-text-field
+                v-model="searchItemId"
+                label="Item IDで検索"
+                outlined
+                prepend-inner-icon="mdi-magnify"
+                clearable
+                dense
+                class="search-field"
+                placeholder="Item IDを入力"
+                hide-details
+                solo-inverted
+              ></v-text-field>
+              <v-btn
+                type="submit"
+                color="#d1d1d1"
+                style="margin-top: 10px; border: 1px solid black;"
+                block
+              >検索</v-btn>
+            </v-form>
+
+            <!-- 検索結果のカード -->
+            <v-card v-if="searchResults.length > 0" class="mt-4" v-for="(item, index) in searchResults" :key="index">
+              <v-card-title>
+                <span class="headline">{{ item.Item_name }}</span>
+              </v-card-title>
+              <v-card-text>
+                <div>商品ID: {{ item.Item_ID }}</div>
+                <div>価格: {{ item.Item_price.toLocaleString() }}円</div>
+                <div>在庫: {{ item.Item_stock }} 個</div>
+              </v-card-text>
+
+              <!-- 編集フォーム -->
+              <v-card-actions>
+                <v-btn color="grey" @click="startEditing(item)">編集</v-btn>
+                <v-btn color="grey" @click="deleteItem(item.Item_ID)">削除</v-btn>
+              </v-card-actions>
+
+              <!-- 編集モード -->
+              <v-form v-if="editingItem && editingItem.Item_ID === item.Item_ID" @submit.prevent="saveChanges">
+                <v-text-field v-model="editingItem.Item_price" label="価格" outlined type="number"></v-text-field>
+                <v-text-field v-model="editingItem.Item_stock" label="在庫数" outlined type="number"></v-text-field>
+                <v-btn type="submit" color="grey" class="button">保存</v-btn>
+                <v-btn color="grey" @click="cancelEditing" class="button">キャンセル</v-btn>
+              </v-form>
+            </v-card>
+
+          </v-col>
+        </v-row>
+      </v-container>
+    </v-app>
+
+    <!-- スナックバー -->
+    <v-snackbar v-model="snackbar.visible" :timeout="snackbar.timeout" color="success">
+      {{ snackbar.message }}
+      <v-btn color="white" text @click="snackbar.visible = false">閉じる</v-btn>
+    </v-snackbar>
+  </div>
+
+  <style>
+    .login-container {
+      max-width: 400px;
+      min-width: 390px;
+      margin: auto;
+      padding: 2rem;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      background: #d1d1d1;
+    }
+
+    .login-header {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .login-header h1 {
+      font-size: 2rem;
+      color: black;
+    }
+
+    .search-field {
+      margin-bottom: 20px;
+    }
+    
+    .button {
+      margin-bottom: 10px;
+      margin-left: 5px;
+    }
+  </style>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vuetify@2/dist/vuetify.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+  <script>
+    new Vue({
+      el: '#app',
+      vuetify: new Vuetify(),
+      data() {
+        return {
+          searchItemId: '', // 検索するItem_ID
+          searchResults: [], // 検索結果を格納する配列
+          editingItem: null, // 編集中の商品
+          snackbar: {
+            visible: false,
+            message: '',
+            timeout: 3000
+          } // スナックバーの設定
+        };
+      },
+      methods: {
+        async searchItem() {
+          try {
+            console.log('検索開始: ', this.searchItemId);
+            const param = { Item_ID: this.searchItemId };
+
+            console.log('API呼び出し開始');
+            const response = await axios.post('https://m3h-minaki-jimoties.azurewebsites.net/api/SearchItemId', param);
+
+            console.log('API呼び出し成功: ', response.data);
+            this.searchResults = response.data.ItemTableList || [];
+            
+            // 検索結果が空だった場合
+            if (this.searchResults.length === 0) {
+              Swal.fire({
+                icon: 'warning',
+                title: '商品が見つかりません',
+                text: '指定したIDの商品は存在しません。',
+                confirmButtonText: 'OK',
+                confirmButtonColor: '#a9a9a9'
+              });
+            } else {
+              console.log('格納成功: ', this.searchResults);
+            }
+          } catch (error) {
+            console.error('検索に失敗しました:', error);
+            
+            if (error.response) {
+              console.error('レスポンスエラー: ', error.response.status, error.response.data);
+              // APIが404エラーを返した場合
+              if (error.response.status === 404) {
+                Swal.fire({
+                  icon: 'error',
+                  title: 'エラー',
+                  text: '指定したIDの商品が見つかりません。IDをご確認ください。',
+                  confirmButtonText: 'OK',
+                  confirmButtonColor: '#a9a9a9'
+                });
+              } else {
+                Swal.fire({
+                  icon: 'error',
+                  title: 'エラー',
+                  text: '検索中にエラーが発生しました。再度お試しください。',
+                  confirmButtonText: 'OK',
+                  confirmButtonColor: '#a9a9a9'
+                });
+              }
+            } else if (error.request) {
+              console.error('リクエストエラー: 応答がありません。', error.request);
+              Swal.fire({
+                icon: 'error',
+                title: 'ネットワークエラー',
+                text: 'サーバーからの応答がありません。ネットワークを確認してください。',
+                confirmButtonText: 'OK',
+                confirmButtonColor: '#a9a9a9'
+              });
+            } else {
+              console.error('設定エラー: ', error.message);
+              Swal.fire({
+                icon: 'error',
+                title: 'エラー',
+                text: '設定に問題があります。管理者にお問い合わせください。',
+                confirmButtonText: 'OK',
+                confirmButtonColor: '#a9a9a9'
+              });
+            }
+          }
+        },
+        startEditing(item) {
+          // 編集モードを開始する
+          this.editingItem = { ...item }; // 現在の商品情報をコピー
+        },
+        async saveChanges() {
+          try {
+            console.log('編集保存開始: ', this.editingItem);
+            // APIを呼び出して編集内容を保存
+            const response = await axios.post('https://m3h-nishizawa-jimotiesapi.azurewebsites.net/api/UpdateItem', this.editingItem);
+
+            console.log('編集保存成功: ', response.data);
+            
+            // 成功した場合の処理
+            this.searchResults = this.searchResults.map(item =>
+              item.Item_ID === this.editingItem.item_ID ? this.editingItem : item
+            );
+            this.editingItem = null; // 編集モードを終了
+
+            // SweetAlertで成功メッセージを表示
+            Swal.fire({
+              icon: 'success',
+              title: '編集完了',
+              text: '編集が正常に保存されました。',
+              confirmButtonText: 'OK',
+              confirmButtonColor: '#a9a9a9'
+            });
+          } catch (error) {
+            console.error('編集保存に失敗しました:', error);
+
+            // SweetAlertでエラーメッセージを表示
+            Swal.fire({
+              icon: 'error',
+              title: '保存失敗',
+              text: '編集内容の保存に失敗しました。再度お試しください。',
+              confirmButtonText: 'OK'
+            });
+          }
+        },
+        cancelEditing() {
+          // 編集をキャンセルする
+          this.editingItem = null;
+        },
+        async deleteItem(itemId) {
+          try {
+            console.log('削除開始: ', itemId);
+            // APIを呼び出して商品を削除
+            const response = await axios.post('https://m3h-nishizawa-jimotiesapi.azurewebsites.net/api/DeleteItem', { item_ID: itemId });
+
+            console.log('削除成功: ', response.data);
+            
+            // 削除後の検索結果更新
+            this.searchResults = this.searchResults.filter(item => item.item_ID !== itemId);
+
+            // SweetAlertで成功メッセージを表示
+            Swal.fire({
+              icon: 'success',
+              title: '削除完了',
+              text: '商品が正常に削除されました。',
+              confirmButtonText: 'OK',
+              confirmButtonColor: '#a9a9a9'
+            });
+          } catch (error) {
+            console.error('削除に失敗しました:', error);
+
+            // SweetAlertでエラーメッセージを表示
+            Swal.fire({
+              icon: 'error',
+              title: '削除失敗',
+              text: '商品を削除できませんでした。再度お試しください。',
+              confirmButtonText: 'OK'
+            });
+          }
+        },
+        goBack() {
+          window.location.href = 'EmployeeMenu.html';
+        }
+      }
+    });
+  </script>
+
+</body>
+</html>
+<!-- partial -->
+  <script src='https://cdn.jsdelivr.net/npm/vue@2/dist/vue.min.js'></script>
+<script src='https://cdn.jsdelivr.net/npm/vuetify@2/dist/vuetify.min.js'></script>
+<script src='https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js'></script>
+</body>
+</html>

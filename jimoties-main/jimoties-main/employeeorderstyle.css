@@ -1,0 +1,29 @@
+.login-container {
+  max-width: 400px;
+  min-width: 390px;
+  margin: auto;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background: #fff;
+  
+}
+
+.login-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.login-header h1 {
+  font-size: 2rem;
+  color: black;
+}
+
+.search-field {
+  margin-bottom: 20px;
+}
+
+.section-title {
+  text-align: center; 
+  margin-bottom: 20px;
+}

@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>都道府県検索</title>
+  
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ジモティーズ - 地域から探す</title>
+    <link href="https://cdn.jsdelivr.net/npm/@mdi/font/css/materialdesignicons.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/vuetify@2.6.12/dist/vuetify.min.css" rel="stylesheet">
+    <style>
+        .header, .footer {
+            background-color: #f5f5f5;
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .header-title {
+            font-family: 'serif';
+            font-size: 24px;
+            font-weight: bold;
+            color: #7b9e7a;
+            display: flex;
+            align-items: center;
+        }
+         .header-subtitle {
+          font-family: 'serif';
+          font-size: 16px;
+          font-weight: normal;
+          color: #7b9e7a;
+          margin-left: 10px;
+        }
+        .header-title .mdi-icon {
+            margin-right: 10px;
+            font-size: 40px;
+            color: #7b9e7a;
+        }
+        .header-right .v-btn, .navbar .v-btn {
+            margin-left: 10px;
+            color: #7b9e7a;
+        } 
+        .header-right {
+            display: flex;
+            align-items: center;
+        }
+
+        .header-right .v-btn {
+             margin-left: 10px;
+             color: #7b9e7a;
+        }
+    
+        .navbar{
+             margin-top: 10px;
+        }
+    
+        .navbar .v-btn {
+              color: #7b9e7a;
+              font-weight: bold;
+        }
+        .search-box {
+            display: flex;
+            align-items: center;
+            margin-right: 20px;
+            width: 100%;
+            max-width: 400px;
+        }
+        .search-btn {
+            background-color: #7b9e7a !important;
+            color: white !important;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+            border-radius: 4px;
+            padding: 8px 16px;
+            font-weight: bold;
+        }
+        .icon-button {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 4px;
+            padding: 4px;
+            color: #7b9e7a;
+            text-transform: none;
+            min-width: 50px;
+            padding: 8px 16px;
+        }
+
+         .icon-button v-icon {
+             font-size: 24px;
+              margin-bottom: 2px;
+        }
+         .icon-button span {
+             font-size: 11px;
+        }
+        .map-container {
+            position: relative;
+            text-align: center;
+            margin-top: 20px;
+        }
+        .map-container img {
+            width: 100%;
+            height: auto;
+        }
+        .region-button {
+            position: absolute;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+        }
+        .region-select-message {
+            font-size: 30px;
+            font-weight: bold;
+            color: #7b9e7a;
+            margin-bottom: 10px;
+        }
+        .btn-okinawa { top: 9%; left: 19%; width: 8vw; height: 8vw; }
+        .btn-kyusyu { top: 65%; left: 18%; width: 8vw; height: 8vw; }
+        .btn-chugoku { top: 49%; left: 28%; width: 8vw; height: 8vw; }
+        .btn-shikoku { top: 83%; left: 38%; width: 8vw; height: 8vw; }
+        .btn-kinki { top: 79%; left: 48%; width: 8vw; height: 8vw; }
+        .btn-chubu { top: 35%; left: 42%; width: 8vw; height: 8vw; }
+        .btn-kanto { top: 59%; left: 63%; width: 8vw; height: 8vw; }
+        .btn-tohoku { top: 43%; left: 67%; width: 8vw; height: 8vw; }
+        .btn-hokkaido { top: 14%; left: 72%; width: 10vw; height: 11vw; }
+        .prefecture-list {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            background: white;
+            color: #7b9e7a;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+            margin-top: 180px;
+            display: none;
+        }
+        .prefecture-list.active {
+            display: block;
+        }
+        .products-container {
+            margin-top: 20px;
+            text-align: center;
+            padding: 20px;
+            max-width: 80%;
+            margin: auto;
+        }
+        .products-title {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            color: #7b9e7a;
+        }
+        .products-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+        .product-card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 10px;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            width: 150px;
+            text-align: center;
+            cursor: pointer;
+            transition: box-shadow 0.3s ease-in-out;
+        }
+        .product-card:hover {
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+        .product-card img {
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 4px;
+            margin-bottom: 10px;
+        }
+        .product-card p {
+            margin: 5px 0;
+            color: #7b9e7a;
+        }
+    </style>
+</head>
+<body>
+<div id="app">
+    <v-app>
+        <div class="header">
+            <div class="header-left">
+                <div class="header-title">
+                    <v-icon class="mdi-icon">mdi-home-city-outline</v-icon>
+                    ジモティーズ
+                    <span class="header-subtitle">－日本全国の名産品セレクトショップ－</span>
+                </div>
+            </div>
+            <div class="header-right">
+                <!-- userIdが存在する場合は「ログイン済」と表示 -->
+                <template v-if="userId">
+                    <v-btn @click="goHome" text color="#7b9e7a">ホーム</v-btn>
+                    <v-btn @click="logout" text color="#7b9e7a">ログアウト</v-btn>
+                </template>
+                <!-- userIdが存在しない場合は「ログイン」と「新規登録」のボタンを表示 -->
+                <template v-else>
+                    <v-btn @click="goHome" text color="#7b9e7a">ホーム</v-btn>
+                    <v-btn @click="login" text color="#7b9e7a">ログイン・新規登録</v-btn>
+                </template>
+            </div>
+        </div>
+        <v-toolbar flat class="navbar">
+            <template v-if="userId">
+            <v-spacer></v-spacer>
+            <v-btn class="icon-button" flat @click="navigateTo('Mypage.html')">
+                <v-icon>mdi-account</v-icon>
+                <span>マイページ</span>
+            </v-btn>
+            <v-btn class="icon-button" flat @click="navigateTo('Favorite.html')">
+                <v-icon>mdi-heart</v-icon>
+                <span>お気に入り</span>
+            </v-btn>
+            <v-btn class="icon-button" flat @click="navigateTo('Shoplist..html')">
+                <v-icon>mdi-cart</v-icon>
+                <span>カート</span>
+            </v-btn>
+        </template>
+        </v-toolbar>
+        <v-main>
+            <v-container>
+                <div class="map-container">
+                    <div class="region-select-message">地域を選択してください</div>
+                    <img src="https://i.gyazo.com/33057dd0213d346645ead6531e0e7135.png" alt="全国地方別の自治体一覧">
+                    <!-- 各地方の透明ボタン -->
+                    <button class="region-button btn-okinawa" @click="showRegion('沖縄県')"></button>
+                    <button class="region-button btn-kyusyu" @click="showPrefectures('九州', ['福岡県', '佐賀県', '長崎県', '熊本県', '大分県', '宮崎県', '鹿児島県'])"></button>
+                    <button class="region-button btn-chugoku" @click="showPrefectures('中国', ['鳥取県', '島根県', '岡山県', '広島県', '山口県'])"></button>
+                    <button class="region-button btn-shikoku" @click="showPrefectures('四国', ['徳島県', '香川県', '愛媛県', '高知県'])"></button>
+                    <button class="region-button btn-kinki" @click="showPrefectures('近畿', ['滋賀県', '京都府', '大阪府', '兵庫県', '奈良県', '和歌山県'])"></button>
+                    <button class="region-button btn-chubu" @click="showPrefectures('中部', ['新潟県', '富山県', '石川県', '福井県', '山梨県', '長野県', '岐阜県', '静岡県', '愛知県'])"></button>
+                    <button class="region-button btn-kanto" @click="showPrefectures('関東', ['茨城県', '栃木県', '群馬県', '埼玉県', '千葉県', '東京都', '神奈川県'])"></button>
+                    <button class="region-button btn-tohoku" @click="showPrefectures('東北', ['青森県', '岩手県', '宮城県', '秋田県', '山形県', '福島県'])"></button>
+                    <button class="region-button btn-hokkaido" @click="showRegion('北海道')"></button>
+
+                    <!-- 都道府県リスト -->
+                    <div v-if="showPrefectureList" class="prefecture-list active">
+                        <v-btn v-for="prefecture in currentPrefectures" :key="prefecture" @click="showProducts(prefecture)" text>{{ prefecture }}</v-btn>
+                        <v-btn @click="closePrefectureList" text color="red">閉じる</v-btn>
+                    </div>
+                </div>
+
+                <!-- 名産品リスト -->
+                <div class="products-container" v-if="selectedProducts.length">
+                    <h3 class="products-title">名産品リスト</h3>
+                    <div class="products-grid">
+                        <div v-for="product in selectedProducts" 
+                             :key="product.id" 
+                             class="product-card" 
+                             @click="goToProductDetail(product.name)">
+                            <img :src="product.image" alt="">
+                            <p>{{ product.name }}</p>
+                            <p>{{ product.description }}</p>
+                            <p>産地: {{ product.region }}</p>
+                            <p>{{ product.price }}円</p>
+                        </div>
+                    </div>
+                </div>
+
+            </v-container>
+        </v-main>
+        <v-footer class="footer">
+            &copy; 2024 ジモティーズ. All rights reserved.
+            <v-btn text class="admin-login-btn" @click="navigateTo('EmployeeLogin.html')">管理者はこちらから</v-btn>
+        </v-footer>
+    </v-app>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vuetify@2.6.12/dist/vuetify.js"></script>
+
+<script>
+    new Vue({
+        el: '#app',
+        vuetify: new Vuetify(),
+        data() {
+            return {
+                userId: null, // 初期値はnull
+                showPrefectureList: false,
+                currentPrefectures: [],
+                selectedProducts: [],
+                apiUrl: 'https://m3h-minaki-jimoties.azurewebsites.net/api/SearchItemPrefecture', // APIエンドポイント
+            };
+        },
+
+        mounted() {
+    //sessionStorage.setItem('user_ID', 1);
+    // sessionStorageからuser_idを取得
+    // セッションストレージからユーザーIDを取得
+    const storedUserId = sessionStorage.getItem('user_ID');
+
+    // ユーザーIDがセッションストレージに保存されていた場合
+    if (storedUserId) {
+      // 保存されていたユーザーIDを変数にセット
+      this.userId = storedUserId;
+    } else {
+      // ユーザーIDが保存されていない場合の処理（必要なら追加）
+      console.log('保存なし');
+    }
+  },
+
+        methods: {
+            showRegion(region) {
+                // 名産品を取得して表示する処理を追加
+                this.showProducts(region);
+            },
+            showPrefectures(region, prefectures) {
+                this.currentPrefectures = prefectures;
+                this.showPrefectureList = true;
+            },
+            async showProducts(prefecture) {
+                try {
+                    console.log('リクエスト送信:', prefecture);
+                    const response = await fetch(this.apiUrl, {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify({ Item_prefecture: prefecture }),
+                    });
+
+                    const text = await response.text();
+                    console.log('API Response:', text);
+
+                    if (text.trim().startsWith('{') || text.trim().startsWith('[')) {
+                        const data = JSON.parse(text);
+
+                        if (data.ItemTableList && Array.isArray(data.ItemTableList)) {
+                            if (data.ItemTableList.length === 0) {
+                                alert('商品がありません');
+                            } else {
+                                this.selectedProducts = data.ItemTableList.map(product => ({
+                                    id: product.Item_ID || 'IDなし',  // Item_ID を id に設定
+                                    name: product.Item_name || '商品名なし',
+                                    price: product.Item_price || '価格未設定',
+                                    image: product.Item_image || 'https://via.placeholder.com/150',
+                                    region: product.Item_prefecture || '産地不明'
+                                }));
+                                this.showPrefectureList = false;
+                            }
+                        } else {
+                            console.error('データ形式が正しくありません。', data);
+                            alert('取得したデータの形式が正しくありません。');
+                        }
+                    } else {
+                        alert(text);
+                    }
+                } catch (error) {
+                    console.error('名産品の取得に失敗しました:', error);
+                    alert('名産品の取得に失敗しました。もう一度お試しください。');
+                }
+            },
+            goToProductDetail(productName) {
+                window.location.href = `/ItemDetail.html?name=${encodeURIComponent(productName)}`;
+            },
+            closePrefectureList() {
+                this.showPrefectureList = false;
+            },
+            navigateTo(page) {
+                window.location.href = `/${page}`;
+            },
+
+            logout() {
+                sessionStorage.removeItem('user_ID');
+                window.location.href = `UserLogin.html`;
+            },
+
+            login() {
+                window.location.href = `UserLogin.html`;
+            },
+
+            goHome() {
+                window.location.href = 'index.html';
+            },
+        },
+
+        
+    });
+</script>
+
+</body>
+</html>
+<!-- partial -->
+  
+</body>
+</html>

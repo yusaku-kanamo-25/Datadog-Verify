@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>お気に入り</title>
+</head>
+<body>
+  <!-- partial:index.partial.html -->
+  <!DOCTYPE html>
+  <html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ジモティーズ</title>
+
+    <!-- VuetifyとMaterial Design IconsのCDNリンク -->
+    <link href="https://cdn.jsdelivr.net/npm/@mdi/font/css/materialdesignicons.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/vuetify@2.6.12/dist/vuetify.min.css" rel="stylesheet">
+    <style>
+      .header {
+        background-color: #f5f5f5;
+        padding: 10px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+       .header-subtitle {
+        font-family: 'serif';
+        font-size: 16px;
+        font-weight: normal;
+        color: #7b9e7a;
+        margin-left: 10px;
+      }
+      .header-left {
+        display: flex;
+        align-items: center;
+      }
+      .header-title {
+        font-family: 'serif';
+        font-size: 24px;
+        font-weight: bold;
+        color: #7b9e7a;
+        display: flex;
+        align-items: center;
+      }
+      .header-title .mdi-icon {
+        margin-right: 10px;
+        font-size: 40px;
+        color: #7b9e7a;
+      }
+      .header-right {
+        display: flex;
+        align-items: center;
+      }
+      .header-right .v-btn {
+        margin-left: 10px;
+        color: #7b9e7a;
+      }
+      .navbar {
+        margin-top: 10px;
+      }
+      .navbar .v-btn {
+        color: #7b9e7a;
+        font-weight: bold;
+      }
+      .search-box {
+        display: flex;
+        align-items: center;
+        margin-right: 20px;
+        width: 400px;
+      }
+      .icon-button {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 0;
+        padding: 4px;
+        color: #7b9e7a;
+        text-transform: none;
+        min-width: 50px;
+        padding: 8px 16px;
+      }
+      .icon-button v-icon {
+        font-size: 24px;
+        margin-bottom: 2px;
+      }
+      .icon-button span {
+        font-size: 11px;
+      }
+      .mdi-icon {
+        font-size: 40px !important;
+        color: #7b9e7a !important;
+      }
+      .footer {
+        background-color: #e0f0e6;
+        padding: 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        color: #7b9e7a;
+        font-size: 14px;
+        height: 75px;
+      }
+      .admin-login-btn {
+        color: #7b9e7a;
+        text-decoration: underline;
+        cursor: pointer;
+      }
+      .search-btn {
+        background-color: #7b9e7a !important;
+        color: white !important;
+        box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+        border-radius: 4px;
+        padding: 8px 16px;
+        font-weight: bold;
+        text-transform: none;
+      }
+      .button-group {
+        justify-content: center; /* ボタンを中央に配置 */
+        display: flex;
+        gap: 20px;
+        position: relative;
+        margin-top: 20px;
+        margin-bottom: 30px; /* カルーセルとの間にスペースを追加 */
+      }
+      .v-container {
+        background-color: #f5f5f5;
+      }
+      .v-container-main {
+        margin-bottom: 60px !important; /* テーブルと合計金額バーの間に余白を追加 */
+      }
+      .custom-app-bar {
+        max-height: 50px !important;
+        padding: 0 16px;
+      }
+      .v-toolbar-title {
+        line-height: 30px !important;
+      }
+      .v-data-table {
+        border-collapse: collapse;
+      }
+      .v-data-table th,
+      .v-data-table td {
+        border: 1px solid #cccccc !important; /* 下線を含むすべての線を表示 */
+        text-align: center !important; /* データの中央揃え */
+        margin: auto !important;
+      }
+      .v-data-table th {
+        background-color: #7b9e7a !important; /* ヘッダーの背景色を変更 */
+        color: white !important; /* 文字色を白に設定 */
+        text-align: center !important; /* ヘッダーの中央揃え */
+        margin: auto !important;
+      }
+      .v-data-table img {
+        display: block;
+        margin: auto;
+        max-width: 100px;
+        max-height: 100px;
+        object-fit: cover;
+      }
+      /* リンクの色を元から緑色に設定 */
+      a {
+        color: #7b9e7a !important; /* リンクの文字色を常に緑色に */
+        text-decoration: none; /* 下線を削除 */
+      }
+      a:hover {
+        text-decoration: underline; /* ホバー時に下線を追加 */
+      }
+      .custom-confirm-button {
+        color: white;
+      }
+      .custom-cancel-button{
+        border: 0.5px solid;
+        
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <v-app style="background-color: white;">
+        <div class="header">
+          <div class="header-left">
+            <div class="header-title">
+              <v-icon class="mdi-icon">mdi-home-city-outline</v-icon>
+              ジモティーズ
+              <span class="header-subtitle">－日本全国の名産品セレクトショップ－</span>
+            </div>
+          </div>
+          <div class="header-right">
+            <v-btn text color="#7b9e7a" @click="goHome">ホーム</v-btn>
+            <v-btn @click="logout" text color="#7b9e7a">ログアウト</v-btn>
+          </div>
+        </div>
+        <!-- 題名バー -->
+        <v-app-bar color="#7b9e7a" dark dense class="custom-app-bar">
+          <v-toolbar-title style="font-size: 20px;">お気に入り</v-toolbar-title>
+        </v-app-bar>
+        <br><br>
+        <!-- メインコンテンツ -->
+        <v-main>
+          <!-- ローディングインジケーター -->
+          <v-container v-if="isLoading" class="text-center">
+            <v-progress-circular indeterminate color="primary"></v-progress-circular>
+          </v-container>
+          <!-- お気に入りリストの表示 -->
+          <v-container v-else class="v-container-main" style="background-color: white;">
+            <v-data-table
+              :key="tableKey"
+              :headers="headers"
+              :items="desserts"
+              :items-per-page="itemsPerPage"
+              item-key="id"
+              class="elevation-1"
+              :disable-sort="true"
+              hide-default-footer
+            >
+              <!-- ゴミ箱アイコンの追加 -->
+              <template v-slot:top>
+                <v-btn icon @click="confirmDelete">
+                  <v-icon color="red">mdi-delete</v-icon>
+                </v-btn>
+              </template>
+
+              <template v-slot:item="{ item }">
+                <tr>
+                  <td>
+                    <v-checkbox
+                      v-model="item.isSelected"
+                      :value="item"
+                      @change="updateSelectedItems(item)"
+                    ></v-checkbox>
+                  </td>
+                  <td>
+                    <img :src="item.Item_image" alt="商品画像" width="100" />
+                  </td>
+                  <td>
+                    <a :href="`ItemDetail.html?name=${encodeURIComponent(item.Item_name)}`">
+                      {{ item.Item_name }}
+                    </a>
+                  </td>
+                  <td>{{ item.Item_prefecture }}</td>
+                  <td>{{ item.Item_price }}円</td>
+                </tr>
+              </template>
+            </v-data-table>
+          </v-container>
+
+          <!-- 合計金額のバーの下にボタンを追加 -->
+          <v-container class="text-center" style="padding: 16px;">
+            <v-btn class="custom-back-btn" style="background-color: red; color: white; margin-right: 10px;" @click="goHome">
+              ホームに戻る
+            </v-btn>
+            <v-btn class="custom-purchase-btn" style="background-color: #7b9e7a; color: white;" @click="confirmAdd">
+              カートに追加
+            </v-btn>
+          </v-container>
+        </v-main>
+
+        <!-- フッター -->
+        <v-footer class="footer">
+          &copy; 2024 ジモティーズ. All rights reserved.
+          <v-btn text class="admin-login-btn" @click="adminLogin">管理者はこちらから</v-btn>
+        </v-footer>
+      </v-app>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vuetify@2.6.12/dist/vuetify.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+      new Vue({
+        el: '#app',
+        vuetify: new Vuetify(),
+        data() {
+          return {
+            headers: [
+              { text: '', value: 'isSelected' }, // チェックボックス用
+              { text: '商品画像', value: 'img' },
+              { text: '商品名', value: 'name' },
+              { text: '産地', value: 'prefecture' },
+              { text: '金額', value: 'price' }
+            ],
+            itemsPerPage: 10,
+            desserts: [], // 初期値は空の配列
+            selectedItems: [], // 選択されたアイテムの配列
+            userID: sessionStorage.getItem('user_ID'), // 表示したいUser_ID
+            itemNUM: 1,
+            isLoading: true, // ローディング状態を追加
+            tableKey: 0 // 再描画用のkeyを追加
+          };
+        },
+        
+
+        mounted() {
+          this.fetchfavorite();
+        },
+
+        methods: {
+          async fetchfavorite() {
+            console.log("データ取得開始：");
+            this.isLoading = true; // ローディング開始
+            const param = {
+              User_ID: this.userID
+            };
+
+            try {
+              console.log(`お気に入りを取得中... User_ID:`, param);
+              const response = await axios.post('https://m3h-minaki-jimoties.azurewebsites.net/api/ListFavorite', param);
+
+              if (response.data && response.data.FavoriteTableList) {
+                this.desserts = response.data.FavoriteTableList; // 取得したデータを直接セット
+                console.log('取得したデータ:', this.desserts);
+
+                // 商品情報を追加で取得する
+                const fetchItemData = this.desserts.map(async item => {
+                  const param2 = { Item_ID: item.Item_ID };
+
+                  try {
+                    const response2 = await axios.post('https://m3h-minaki-jimoties.azurewebsites.net/api/SearchItemId', param2);
+                    if (response2.data && response2.data.ItemTableList && response2.data.ItemTableList.length > 0) {
+                      const itemData = response2.data.ItemTableList[0];
+                      item.Item_name = itemData.Item_name || "不明";
+                      item.Item_prefecture = itemData.Item_prefecture || "不明";
+                      item.Item_price = itemData.Item_price || 0;
+                      item.Item_image = itemData.Item_image || "不明";
+
+                      console.log(`Item_ID: ${item.Item_ID} のデータ:`, item);
+                    }
+                  } catch (error) {
+                    console.error(`Item_ID ${item.Item_ID} のデータ取得に失敗しました:`, error);
+                  }
+                });
+
+                await Promise.all(fetchItemData); // すべての非同期操作が完了するのを待ちます
+              } else {
+                console.error('レスポンスの形式が予想外です:', response);
+              }
+            } catch (error) {
+              console.error('データの取得に失敗しました:', error);
+            } finally {
+              this.isLoading = false; // ローディング終了
+              this.tableKey += 1; // 強制的にテーブルを再描画
+            }
+          },
+
+          confirmDelete() {
+            if (this.selectedItems.length === 0) {
+              Swal.fire({
+          icon: 'warning',
+          title: 'アイテムを選択してください。',
+          confirmButtonText: 'OK',
+          confirmButtonColor: '#d3d3d3',
+          iconColor: '#008000'
+        });
+           return;
+            }
+            Swal.fire({
+        title: 'お気に入りから削除しますか',
+        showCancelButton: true,
+        icon: 'question',
+        confirmButtonText: 'はい',
+        cancelButtonText: 'いいえ',
+        confirmButtonColor: '#7b9e7a',
+        cancelButtonColor: 'white',
+        iconColor: '#008000',
+        customClass: {
+    confirmButton: 'custom-confirm-button',
+    cancelButton: 'custom-cancel-button'
+  },
+        reverseButtons: true
+      }).then((result) => {
+        if (result.isConfirmed) {
+          this.deleteSelected();
+        }
+      });
+          },
+
+          async deleteSelected() {
+  const functionUrl = 'https://m3h-nishizawa-jimotiesapi.azurewebsites.net/api/DeleteItemFavorite';
+  try {
+    console.log('Deleting selected items:', this.selectedItems);
+
+    for (let item of this.selectedItems) {
+      const response = await fetch(functionUrl, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          user_ID: this.userID,
+          Item_ID: item.Item_ID
+        })
+      });
+
+      console.log(`Response status for item ${item.Item_ID}: ${response.status}`);
+
+      if (!response.ok) {
+        const errorText = await response.text();
+        console.error(`HTTP error! Status: ${response.status}, Text: ${errorText}`);
+        throw new Error(`HTTP error! Status: ${response.status}`);
+      }
+
+      const result = await response.json();
+      console.log(`Full result for item ${item.Item_ID}:`, result); // レスポンス全体を出力
+
+      // ここでresult.Statusが正しく取得できているか確認
+      if (result.status === 'Success') {
+        // 削除に成功した場合の処理
+        this.desserts = this.desserts.filter(dessert => dessert.Item_ID !== item.Item_ID);
+        this.desserts = [...this.desserts]; // 画面を更新するために再代入
+
+        // Swal.fireを使って削除成功のメッセージを表示
+        Swal.fire({
+          icon: 'success',
+          text: `${item.Item_name}が削除されました。`,
+          timer: 2000, // 2秒後に自動で閉じる
+          showConfirmButton: false
+        });
+      } else {
+        console.error(`削除APIは成功しましたが、ステータスが'${result.status}'となっています。`);
+
+        // Swal.fireを使って削除失敗のメッセージを表示
+        Swal.fire({
+          icon: 'warning',
+          title: '削除失敗',
+          text: '削除に失敗しました。',
+          confirmButtonText: '閉じる'
+        });
+      }
+    }
+
+    this.selectedItems = []; // 選択項目をリセット
+
+  } catch (error) {
+    console.error('削除中にエラーが発生しました:', error);
+
+    // Swal.fireを使ってエラーメッセージを表示
+    Swal.fire({
+      icon: 'error',
+      title: 'エラー',
+      text: '削除中にエラーが発生しました。',
+      confirmButtonText: '閉じる'
+    });
+  }
+},
+
+          confirmAdd() {
+            if (this.selectedItems.length === 0) {
+              Swal.fire({
+          icon: 'warning',
+          title: 'アイテムを選択してください。',
+          confirmButtonText: 'OK',
+          confirmButtonColor: '#d3d3d3',
+          iconColor: '#008000',
+        });
+           return;
+            }
+            Swal.fire({
+        title: 'カートに追加しますか',
+        icon: 'question',
+        showCancelButton: true,
+        confirmButtonText: 'はい',
+        cancelButtonText: 'いいえ',
+        confirmButtonColor: '#7b9e7a',
+        cancelButtonColor: 'white',
+        iconColor: '#008000',
+        customClass: {
+    confirmButton: 'custom-confirm-button',
+    cancelButton: 'custom-cancel-button'
+  },
+        reverseButtons: true
+      }).then((result) => {
+        if (result.isConfirmed) {
+          this.addSelected();
+        }
+      });
+          },
+
+          async addSelected() {
+            const functionUrl = 'https://m3h-nishizawa-jimotiesapi.azurewebsites.net/api/AddItemShopList';
+            try {
+              for (let item of this.selectedItems) {
+                const response = await fetch(functionUrl, {
+                  method: 'POST',
+                  headers: {
+                    'Content-Type': 'application/json'
+                  },
+                  body: JSON.stringify({
+                    user_ID: this.userID,
+                    item_ID: item.Item_ID,
+                    item_num: this.itemNUM
+                  })
+                });
+
+                if (!response.ok) {
+                  const errorText = await response.text();
+                  console.error(`HTTP error! Status: ${response.status}, Text: ${errorText}`);
+                  throw new Error(`HTTP error! Status: ${response.status}`);
+                }
+
+                const result = await response.json();
+                if (result.Status !== 'Success') {
+                  Swal.fire({
+          icon: 'success',
+          text: `${item.Item_name}を追加しました。`,
+          timer: 2000, // 2秒後に自動で閉じる
+          showConfirmButton: false
+        });
+                  return;
+                }
+              }
+
+              // データから削除したアイテムをフィルタリングして画面から削除
+              this.desserts = this.desserts.filter(item => !this.selectedItems.includes(item));
+              this.selectedItems = []; // 選択項目をリセット
+            } catch (error) {
+              console.error('追加中にエラーが発生しました:', error);
+              alert('追加中にエラーが発生しました。');
+            }
+          },
+
+          updateSelectedItems(item) {
+            if (item.isSelected) {
+              this.selectedItems.push(item);
+            } else {
+              const index = this.selectedItems.indexOf(item);
+              if (index > -1) {
+                this.selectedItems.splice(index, 1);
+              }
+            }
+          },
+
+          adminLogin() {
+            window.location.href = `EmployeeLogin.html`;
+          },
+
+          goHome() {
+            window.location.href = 'index.html';
+          },
+
+          logout() {
+            window.location.href = 'UserLogin.html';
+            sessionStorage.removeItem('user_ID');
+          },
+        }
+      });
+    </script>
+  </body>
+  </html>

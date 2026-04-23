@@ -1,0 +1,4 @@
+INSERT INTO UserTable (user_name, user_password, mail, address, telephone, email) VALUES
+('田中 太郎', 'password123', '160-0022', '東京都新宿区1-1-1', '080-1234-5678', 'tanaka@example.com'),
+('鈴木 花子', 'securePass456', '530-0001', '大阪府大阪市2-2-2', '090-2345-6789', 'suzuki@example.com'),
+('佐藤 次郎', 'strongPass789', '060-0042', '北海道札幌市3-3-3', '070-3456-7890', 'sato@example.com');

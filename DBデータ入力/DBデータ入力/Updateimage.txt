@@ -1,0 +1,938 @@
+UPDATE ItemTable
+SET item_image = 'https://m3hjimotiesphoto.blob.core.windows.net/famousphoto/1.jpg'
+WHERE item_ID = 1;
+
+UPDATE ItemTable
+SET item_image = 'https://m3hjimotiesphoto.blob.core.windows.net/famousphoto/2.jpg'
+WHERE item_ID = 2;
+
+UPDATE ItemTable
+SET item_image = 'https://m3hjimotiesphoto.blob.core.windows.net/famousphoto/3.jpg'
+WHERE item_ID = 3;
+
+UPDATE ItemTable
+SET item_image = 'https://m3hjimotiesphoto.blob.core.windows.net/famousphoto/4.jpg'
+WHERE item_ID = 4;
+
+UPDATE ItemTable
+SET item_image = 'https://m3hjimotiesphoto.blob.core.windows.net/famousphoto/5.jpg'
+WHERE item_ID = 5;
+
+UPDATE ItemTable
+SET item_image = 'https://m3hjimotiesphoto.blob.core.windows.net/famousphoto/6.jpg'
+WHERE item_ID = 6;
+
+UPDATE ItemTable
+SET item_image = 'https://m3hjimotiesphoto.blob.core.windows.net/famousphoto/7.jpg'
+WHERE item_ID = 7;
+
+UPDATE ItemTable
+SET item_image = 'https://m3hjimotiesphoto.blob.core.windows.net/famousphoto/8.jpg'
+WHERE item_ID = 8;
+
+UPDATE ItemTable
+SET item_image = 'https://m3hjimotiesphoto.blob.core.windows.net/famousphoto/9.jpg'
+WHERE item_ID = 9;
+
+UPDATE ItemTable
+SET item_image = 'https://m3hjimotiesphoto.blob.core.windows.net/famousphoto/10.jpg'
+WHERE item_ID = 10;
+
+UPDATE ItemTable
+SET item_image = 'https://m3hjimotiesphoto.blob.core.windows.net/famousphoto/11.jpg'
+WHERE item_ID = 11;
+
+UPDATE ItemTable
+SET item_image = 'https://m3hjimotiesphoto.blob.core.windows.net/famousphoto/12.jpg'
+WHERE item_ID = 12;
+
+UPDATE ItemTable
+SET item_image = 'https://m3hjimotiesphoto.blob.core.windows.net/famousphoto/13.jpg'
+WHERE item_ID = 13;
+
+UPDATE ItemTable
+SET item_image = 'https://m3hjimotiesphoto.blob.core.windows.net/famousphoto/14.jpg'
+WHERE item_ID = 14;
+
+UPDATE ItemTable
+SET item_image = 'https://m3hjimotiesphoto.blob.core.windows.net/famousphoto/15.jpg'
+WHERE item_ID = 15;
+
+UPDATE ItemTable
+SET item_image = 'https://m3hjimotiesphoto.blob.core.windows.net/famousphoto/16.jpg'
+WHERE item_ID = 16;
+
+UPDATE ItemTable
+SET item_image = 'https://m3hjimotiesphoto.blob.core.windows.net/famousphoto/17.jpg'
+WHERE item_ID = 17;
+
+UPDATE ItemTable
+SET item_image = 'https://m3hjimotiesphoto.blob.core.windows.net/famousphoto/18.jpg'
+WHERE item_ID = 18;
+
+UPDATE ItemTable
+SET item_image = 'https://m3hjimotiesphoto.blob.core.windows.net/famousphoto/19.jpg'
+WHERE item_ID = 19;
+
+UPDATE ItemTable
+SET item_image = 'https://m3hjimotiesphoto.blob.core.windows.net/famousphoto/20.jpg'
+WHERE item_ID = 20;
+
+UPDATE ItemTable
+SET item_image = 'https://m3hjimotiesphoto.blob.core.windows.net/famousphoto/21.jpg'
+WHERE item_ID = 21;
+
+UPDATE ItemTable
+SET item_image = 'https://m3hjimotiesphoto.blob.core.windows.net/famousphoto/22.jpg'
+WHERE item_ID = 22;
+
+UPDATE ItemTable
+SET item_image = 'https://m3hjimotiesphoto.blob.core.windows.net/famousphoto/23.jpg'
+WHERE item_ID = 23;
+
+UPDATE ItemTable
+SET item_image = 'https://m3hjimotiesphoto.blob.core.windows.net/famousphoto/24.jpg'
+WHERE item_ID = 24;
+
+UPDATE ItemTable
+SET item_image = 'https://m3hjimotiesphoto.blob.core.windows.net/famousphoto/25.jpg'
+WHERE item_ID = 25;
+
+UPDATE ItemTable
+SET item_image = 'https://m3hjimotiesphoto.blob.core.windows.net/famousphoto/26.jpg'
+WHERE item_ID = 26;
+
+UPDATE ItemTable
+SET item_image = 'https://m3hjimotiesphoto.blob.core.windows.net/famousphoto/27.jpg'
+WHERE item_ID = 27;
+
+UPDATE ItemTable
+SET item_image = 'https://m3hjimotiesphoto.blob.core.windows.net/famousphoto/28.jpg'
+WHERE item_ID = 28;
+
+UPDATE ItemTable
+SET item_image = 'https://m3hjimotiesphoto.blob.core.windows.net/famousphoto/29.jpg'
+WHERE item_ID = 29;
+
+UPDATE ItemTable
+SET item_image = 'https://m3hjimotiesphoto.blob.core.windows.net/famousphoto/30.jpg'
+WHERE item_ID = 30;
+
+UPDATE ItemTable
+SET item_image = 'https://m3hjimotiesphoto.blob.core.windows.net/famousphoto/31.jpg'
+WHERE item_ID = 31;
+
+UPDATE ItemTable
+SET item_image = 'https://m3hjimotiesphoto.blob.core.windows.net/famousphoto/32.jpg'
+WHERE item_ID = 32;
+
+UPDATE ItemTable
+SET item_image = 'https://m3hjimotiesphoto.blob.core.windows.net/famousphoto/33.jpg'
+WHERE item_ID = 33;
+
+UPDATE ItemTable
+SET item_image = 'https://m3hjimotiesphoto.blob.core.windows.net/famousphoto/34.jpg'
+WHERE item_ID = 34;
+
+UPDATE ItemTable
+SET item_image = 'https://m3hjimotiesphoto.blob.core.windows.net/famousphoto/35.jpg'
+WHERE item_ID = 35;
+
+UPDATE ItemTable
+SET item_image = 'https://m3hjimotiesphoto.blob.core.windows.net/famousphoto/36.jpg'
+WHERE item_ID = 36;
+
+UPDATE ItemTable
+SET item_image = 'https://m3hjimotiesphoto.blob.core.windows.net/famousphoto/37.jpg'
+WHERE item_ID = 37;
+
+UPDATE ItemTable
+SET item_image = 'https://m3hjimotiesphoto.blob.core.windows.net/famousphoto/38.jpg'
+WHERE item_ID = 38;
+
+UPDATE ItemTable
+SET item_image = 'https://m3hjimotiesphoto.blob.core.windows.net/famousphoto/39.jpg'
+WHERE item_ID = 39;
+
+UPDATE ItemTable
+SET item_image = 'https://m3hjimotiesphoto.blob.core.windows.net/famousphoto/40.jpg'
+WHERE item_ID = 40;
+
+UPDATE ItemTable
+SET item_image = 'https://m3hjimotiesphoto.blob.core.windows.net/famousphoto/41.jpg'
+WHERE item_ID = 41;
+
+UPDATE ItemTable
+SET item_image = 'https://m3hjimotiesphoto.blob.core.windows.net/famousphoto/42.jpg'
+WHERE item_ID = 42;
+
+UPDATE ItemTable
+SET item_image = 'https://m3hjimotiesphoto.blob.core.windows.net/famousphoto/43.jpg'
+WHERE item_ID = 43;
+
+UPDATE ItemTable
+SET item_image = 'https://m3hjimotiesphoto.blob.core.windows.net/famousphoto/44.jpg'
+WHERE item_ID = 44;
+
+UPDATE ItemTable
+SET item_image = 'https://m3hjimotiesphoto.blob.core.windows.net/famousphoto/45.jpg'
+WHERE item_ID = 45;
+
+UPDATE ItemTable
+SET item_image = 'https://m3hjimotiesphoto.blob.core.windows.net/famousphoto/46.jpg'
+WHERE item_ID = 46;
+
+UPDATE ItemTable
+SET item_image = 'https://m3hjimotiesphoto.blob.core.windows.net/famousphoto/47.jpg'
+WHERE item_ID = 47;
+
+UPDATE ItemTable
+SET item_image = 'https://m3hjimotiesphoto.blob.core.windows.net/famousphoto/48.jpg'
+WHERE item_ID = 48;
+
+UPDATE ItemTable
+SET item_image = 'https://m3hjimotiesphoto.blob.core.windows.net/famousphoto/49.jpg'
+WHERE item_ID = 49;
+
+UPDATE ItemTable
+SET item_image = 'https://m3hjimotiesphoto.blob.core.windows.net/famousphoto/50.jpg'
+WHERE item_ID = 50;
+
+UPDATE ItemTable
+SET item_image = 'https://m3hjimotiesphoto.blob.core.windows.net/famousphoto/51.jpg'
+WHERE item_ID = 51;
+
+UPDATE ItemTable
+SET item_image = 'https://m3hjimotiesphoto.blob.core.windows.net/famousphoto/52.jpg'
+WHERE item_ID = 52;
+
+UPDATE ItemTable
+SET item_image = 'https://m3hjimotiesphoto.blob.core.windows.net/famousphoto/53.jpg'
+WHERE item_ID = 53;
+
+UPDATE ItemTable
+SET item_image = 'https://m3hjimotiesphoto.blob.core.windows.net/famousphoto/54.jpg'
+WHERE item_ID = 54;
+
+UPDATE ItemTable
+SET item_image = 'https://m3hjimotiesphoto.blob.core.windows.net/famousphoto/55.jpg'
+WHERE item_ID = 55;
+
+UPDATE ItemTable
+SET item_image = 'https://m3hjimotiesphoto.blob.core.windows.net/famousphoto/56.jpg'
+WHERE item_ID = 56;
+
+UPDATE ItemTable
+SET item_image = 'https://m3hjimotiesphoto.blob.core.windows.net/famousphoto/57.jpg'
+WHERE item_ID = 57;
+
+UPDATE ItemTable
+SET item_image = 'https://m3hjimotiesphoto.blob.core.windows.net/famousphoto/58.jpg'
+WHERE item_ID = 58;
+
+UPDATE ItemTable
+SET item_image = 'https://m3hjimotiesphoto.blob.core.windows.net/famousphoto/59.jpg'
+WHERE item_ID = 59;
+
+UPDATE ItemTable
+SET item_image = 'https://m3hjimotiesphoto.blob.core.windows.net/famousphoto/60.jpg'
+WHERE item_ID = 60;
+
+UPDATE ItemTable
+SET item_image = 'https://m3hjimotiesphoto.blob.core.windows.net/famousphoto/61.jpg'
+WHERE item_ID = 61;
+
+UPDATE ItemTable
+SET item_image = 'https://m3hjimotiesphoto.blob.core.windows.net/famousphoto/62.jpg'
+WHERE item_ID = 62;
+
+UPDATE ItemTable
+SET item_image = 'https://m3hjimotiesphoto.blob.core.windows.net/famousphoto/63.jpg'
+WHERE item_ID = 63;
+
+UPDATE ItemTable
+SET item_image = 'https://m3hjimotiesphoto.blob.core.windows.net/famousphoto/64.jpg'
+WHERE item_ID = 64;
+
+UPDATE ItemTable
+SET item_image = 'https://m3hjimotiesphoto.blob.core.windows.net/famousphoto/65.jpg'
+WHERE item_ID = 65;
+
+UPDATE ItemTable
+SET item_image = 'https://m3hjimotiesphoto.blob.core.windows.net/famousphoto/66.jpg'
+WHERE item_ID = 66;
+
+UPDATE ItemTable
+SET item_image = 'https://m3hjimotiesphoto.blob.core.windows.net/famousphoto/67.jpg'
+WHERE item_ID = 67;
+
+UPDATE ItemTable
+SET item_image = 'https://m3hjimotiesphoto.blob.core.windows.net/famousphoto/68.jpg'
+WHERE item_ID = 68;
+
+UPDATE ItemTable
+SET item_image = 'https://m3hjimotiesphoto.blob.core.windows.net/famousphoto/69.jpg'
+WHERE item_ID = 69;
+
+UPDATE ItemTable
+SET item_image = 'https://m3hjimotiesphoto.blob.core.windows.net/famousphoto/70.jpg'
+WHERE item_ID = 70;
+
+UPDATE ItemTable
+SET item_image = 'https://m3hjimotiesphoto.blob.core.windows.net/famousphoto/71.jpg'
+WHERE item_ID = 71;
+
+UPDATE ItemTable
+SET item_image = 'https://m3hjimotiesphoto.blob.core.windows.net/famousphoto/72.jpg'
+WHERE item_ID = 72;
+
+UPDATE ItemTable
+SET item_image = 'https://m3hjimotiesphoto.blob.core.windows.net/famousphoto/73.jpg'
+WHERE item_ID = 73;
+
+UPDATE ItemTable
+SET item_image = 'https://m3hjimotiesphoto.blob.core.windows.net/famousphoto/74.jpg'
+WHERE item_ID = 74;
+
+UPDATE ItemTable
+SET item_image = 'https://m3hjimotiesphoto.blob.core.windows.net/famousphoto/75.jpg'
+WHERE item_ID = 75;
+
+UPDATE ItemTable
+SET item_image = 'https://m3hjimotiesphoto.blob.core.windows.net/famousphoto/76.jpg'
+WHERE item_ID = 76;
+
+UPDATE ItemTable
+SET item_image = 'https://m3hjimotiesphoto.blob.core.windows.net/famousphoto/77.jpg'
+WHERE item_ID = 77;
+
+UPDATE ItemTable
+SET item_image = 'https://m3hjimotiesphoto.blob.core.windows.net/famousphoto/78.jpg'
+WHERE item_ID = 78;
+
+UPDATE ItemTable
+SET item_image = 'https://m3hjimotiesphoto.blob.core.windows.net/famousphoto/79.jpg'
+WHERE item_ID = 79;
+
+UPDATE ItemTable
+SET item_image = 'https://m3hjimotiesphoto.blob.core.windows.net/famousphoto/80.jpg'
+WHERE item_ID = 80;
+
+UPDATE ItemTable
+SET item_image = 'https://m3hjimotiesphoto.blob.core.windows.net/famousphoto/81.jpg'
+WHERE item_ID = 81;
+
+UPDATE ItemTable
+SET item_image = 'https://m3hjimotiesphoto.blob.core.windows.net/famousphoto/82.jpg'
+WHERE item_ID = 82;
+
+UPDATE ItemTable
+SET item_image = 'https://m3hjimotiesphoto.blob.core.windows.net/famousphoto/83.jpg'
+WHERE item_ID = 83;
+
+UPDATE ItemTable
+SET item_image = 'https://m3hjimotiesphoto.blob.core.windows.net/famousphoto/84.jpg'
+WHERE item_ID = 84;
+
+UPDATE ItemTable
+SET item_image = 'https://m3hjimotiesphoto.blob.core.windows.net/famousphoto/85.jpg'
+WHERE item_ID = 85;
+
+UPDATE ItemTable
+SET item_image = 'https://m3hjimotiesphoto.blob.core.windows.net/famousphoto/86.jpg'
+WHERE item_ID = 86;
+
+UPDATE ItemTable
+SET item_image = 'https://m3hjimotiesphoto.blob.core.windows.net/famousphoto/87.jpg'
+WHERE item_ID = 87;
+
+UPDATE ItemTable
+SET item_image = 'https://m3hjimotiesphoto.blob.core.windows.net/famousphoto/88.jpg'
+WHERE item_ID = 88;
+
+UPDATE ItemTable
+SET item_image = 'https://m3hjimotiesphoto.blob.core.windows.net/famousphoto/89.jpg'
+WHERE item_ID = 89;
+
+UPDATE ItemTable
+SET item_image = 'https://m3hjimotiesphoto.blob.core.windows.net/famousphoto/90.jpg'
+WHERE item_ID = 90;
+
+UPDATE ItemTable
+SET item_image = 'https://m3hjimotiesphoto.blob.core.windows.net/famousphoto/91.jpg'
+WHERE item_ID = 91;
+
+UPDATE ItemTable
+SET item_image = 'https://m3hjimotiesphoto.blob.core.windows.net/famousphoto/92.jpg'
+WHERE item_ID = 92;
+
+UPDATE ItemTable
+SET item_image = 'https://m3hjimotiesphoto.blob.core.windows.net/famousphoto/93.jpg'
+WHERE item_ID = 93;
+
+UPDATE ItemTable
+SET item_image = 'https://m3hjimotiesphoto.blob.core.windows.net/famousphoto/94.jpg'
+WHERE item_ID = 94;
+
+UPDATE ItemTable
+SET item_image = 'https://m3hjimotiesphoto.blob.core.windows.net/famousphoto/95.jpg'
+WHERE item_ID = 95;
+
+UPDATE ItemTable
+SET item_image = 'https://m3hjimotiesphoto.blob.core.windows.net/famousphoto/96.jpg'
+WHERE item_ID = 96;
+
+UPDATE ItemTable
+SET item_image = 'https://m3hjimotiesphoto.blob.core.windows.net/famousphoto/97.jpg'
+WHERE item_ID = 97;
+
+UPDATE ItemTable
+SET item_image = 'https://m3hjimotiesphoto.blob.core.windows.net/famousphoto/98.jpg'
+WHERE item_ID = 98;
+
+UPDATE ItemTable
+SET item_image = 'https://m3hjimotiesphoto.blob.core.windows.net/famousphoto/99.jpg'
+WHERE item_ID = 99;
+
+UPDATE ItemTable
+SET item_image = 'https://m3hjimotiesphoto.blob.core.windows.net/famousphoto/100.jpg'
+WHERE item_ID = 100;
+
+UPDATE ItemTable
+SET item_image = 'https://m3hjimotiesphoto.blob.core.windows.net/famousphoto/101.jpg'
+WHERE item_ID = 101;
+
+UPDATE ItemTable
+SET item_image = 'https://m3hjimotiesphoto.blob.core.windows.net/famousphoto/102.jpg'
+WHERE item_ID = 102;
+
+UPDATE ItemTable
+SET item_image = 'https://m3hjimotiesphoto.blob.core.windows.net/famousphoto/103.jpg'
+WHERE item_ID = 103;
+
+UPDATE ItemTable
+SET item_image = 'https://m3hjimotiesphoto.blob.core.windows.net/famousphoto/104.jpg'
+WHERE item_ID = 104;
+
+UPDATE ItemTable
+SET item_image = 'https://m3hjimotiesphoto.blob.core.windows.net/famousphoto/105.jpg'
+WHERE item_ID = 105;
+
+UPDATE ItemTable
+SET item_image = 'https://m3hjimotiesphoto.blob.core.windows.net/famousphoto/106.jpg'
+WHERE item_ID = 106;
+
+UPDATE ItemTable
+SET item_image = 'https://m3hjimotiesphoto.blob.core.windows.net/famousphoto/107.jpg'
+WHERE item_ID = 107;
+
+UPDATE ItemTable
+SET item_image = 'https://m3hjimotiesphoto.blob.core.windows.net/famousphoto/108.jpg'
+WHERE item_ID = 108;
+
+UPDATE ItemTable
+SET item_image = 'https://m3hjimotiesphoto.blob.core.windows.net/famousphoto/109.jpg'
+WHERE item_ID = 109;
+
+UPDATE ItemTable
+SET item_image = 'https://m3hjimotiesphoto.blob.core.windows.net/famousphoto/110.jpg'
+WHERE item_ID = 110;
+
+UPDATE ItemTable
+SET item_image = 'https://m3hjimotiesphoto.blob.core.windows.net/famousphoto/111.jpg'
+WHERE item_ID = 111;
+
+UPDATE ItemTable
+SET item_image = 'https://m3hjimotiesphoto.blob.core.windows.net/famousphoto/112.jpg'
+WHERE item_ID = 112;
+
+UPDATE ItemTable
+SET item_image = 'https://m3hjimotiesphoto.blob.core.windows.net/famousphoto/113.jpg'
+WHERE item_ID = 113;
+
+UPDATE ItemTable
+SET item_image = 'https://m3hjimotiesphoto.blob.core.windows.net/famousphoto/114.jpg'
+WHERE item_ID = 114;
+
+UPDATE ItemTable
+SET item_image = 'https://m3hjimotiesphoto.blob.core.windows.net/famousphoto/115.jpg'
+WHERE item_ID = 115;
+
+UPDATE ItemTable
+SET item_image = 'https://m3hjimotiesphoto.blob.core.windows.net/famousphoto/116.jpg'
+WHERE item_ID = 116;
+
+UPDATE ItemTable
+SET item_image = 'https://m3hjimotiesphoto.blob.core.windows.net/famousphoto/117.jpg'
+WHERE item_ID = 117;
+
+UPDATE ItemTable
+SET item_image = 'https://m3hjimotiesphoto.blob.core.windows.net/famousphoto/118.jpg'
+WHERE item_ID = 118;
+
+UPDATE ItemTable
+SET item_image = 'https://m3hjimotiesphoto.blob.core.windows.net/famousphoto/119.jpg'
+WHERE item_ID = 119;
+
+UPDATE ItemTable
+SET item_image = 'https://m3hjimotiesphoto.blob.core.windows.net/famousphoto/120.jpg'
+WHERE item_ID = 120;
+
+UPDATE ItemTable
+SET item_image = 'https://m3hjimotiesphoto.blob.core.windows.net/famousphoto/121.jpg'
+WHERE item_ID = 121;
+
+UPDATE ItemTable
+SET item_image = 'https://m3hjimotiesphoto.blob.core.windows.net/famousphoto/122.jpg'
+WHERE item_ID = 122;
+
+UPDATE ItemTable
+SET item_image = 'https://m3hjimotiesphoto.blob.core.windows.net/famousphoto/123.jpg'
+WHERE item_ID = 123;
+
+UPDATE ItemTable
+SET item_image = 'https://m3hjimotiesphoto.blob.core.windows.net/famousphoto/124.jpg'
+WHERE item_ID = 124;
+
+UPDATE ItemTable
+SET item_image = 'https://m3hjimotiesphoto.blob.core.windows.net/famousphoto/125.jpg'
+WHERE item_ID = 125;
+
+UPDATE ItemTable
+SET item_image = 'https://m3hjimotiesphoto.blob.core.windows.net/famousphoto/126.jpg'
+WHERE item_ID = 126;
+
+UPDATE ItemTable
+SET item_image = 'https://m3hjimotiesphoto.blob.core.windows.net/famousphoto/127.jpg'
+WHERE item_ID = 127;
+
+UPDATE ItemTable
+SET item_image = 'https://m3hjimotiesphoto.blob.core.windows.net/famousphoto/128.jpg'
+WHERE item_ID = 128;
+
+UPDATE ItemTable
+SET item_image = 'https://m3hjimotiesphoto.blob.core.windows.net/famousphoto/129.jpg'
+WHERE item_ID = 129;
+
+UPDATE ItemTable
+SET item_image = 'https://m3hjimotiesphoto.blob.core.windows.net/famousphoto/130.jpg'
+WHERE item_ID = 130;
+
+UPDATE ItemTable
+SET item_image = 'https://m3hjimotiesphoto.blob.core.windows.net/famousphoto/131.jpg'
+WHERE item_ID = 131;
+
+UPDATE ItemTable
+SET item_image = 'https://m3hjimotiesphoto.blob.core.windows.net/famousphoto/132.jpg'
+WHERE item_ID = 132;
+
+UPDATE ItemTable
+SET item_image = 'https://m3hjimotiesphoto.blob.core.windows.net/famousphoto/133.jpg'
+WHERE item_ID = 133;
+
+UPDATE ItemTable
+SET item_image = 'https://m3hjimotiesphoto.blob.core.windows.net/famousphoto/134.jpg'
+WHERE item_ID = 134;
+
+UPDATE ItemTable
+SET item_image = 'https://m3hjimotiesphoto.blob.core.windows.net/famousphoto/135.jpg'
+WHERE item_ID = 135;
+
+UPDATE ItemTable
+SET item_image = 'https://m3hjimotiesphoto.blob.core.windows.net/famousphoto/136.jpg'
+WHERE item_ID = 136;
+
+UPDATE ItemTable
+SET item_image = 'https://m3hjimotiesphoto.blob.core.windows.net/famousphoto/137.jpg'
+WHERE item_ID = 137;
+
+UPDATE ItemTable
+SET item_image = 'https://m3hjimotiesphoto.blob.core.windows.net/famousphoto/138.jpg'
+WHERE item_ID = 138;
+
+UPDATE ItemTable
+SET item_image = 'https://m3hjimotiesphoto.blob.core.windows.net/famousphoto/139.jpg'
+WHERE item_ID = 139;
+
+UPDATE ItemTable
+SET item_image = 'https://m3hjimotiesphoto.blob.core.windows.net/famousphoto/140.jpg'
+WHERE item_ID = 140;
+
+UPDATE ItemTable
+SET item_image = 'https://m3hjimotiesphoto.blob.core.windows.net/famousphoto/141.jpg'
+WHERE item_ID = 141;
+
+UPDATE ItemTable
+SET item_image = 'https://m3hjimotiesphoto.blob.core.windows.net/famousphoto/142.jpg'
+WHERE item_ID = 142;
+
+UPDATE ItemTable
+SET item_image = 'https://m3hjimotiesphoto.blob.core.windows.net/famousphoto/143.jpg'
+WHERE item_ID = 143;
+
+UPDATE ItemTable
+SET item_image = 'https://m3hjimotiesphoto.blob.core.windows.net/famousphoto/144.jpg'
+WHERE item_ID = 144;
+
+UPDATE ItemTable
+SET item_image = 'https://m3hjimotiesphoto.blob.core.windows.net/famousphoto/145.jpg'
+WHERE item_ID = 145;
+
+UPDATE ItemTable
+SET item_image = 'https://m3hjimotiesphoto.blob.core.windows.net/famousphoto/146.jpg'
+WHERE item_ID = 146;
+
+UPDATE ItemTable
+SET item_image = 'https://m3hjimotiesphoto.blob.core.windows.net/famousphoto/147.jpg'
+WHERE item_ID = 147;
+
+UPDATE ItemTable
+SET item_image = 'https://m3hjimotiesphoto.blob.core.windows.net/famousphoto/148.jpg'
+WHERE item_ID = 148;
+
+UPDATE ItemTable
+SET item_image = 'https://m3hjimotiesphoto.blob.core.windows.net/famousphoto/149.jpg'
+WHERE item_ID = 149;
+
+UPDATE ItemTable
+SET item_image = 'https://m3hjimotiesphoto.blob.core.windows.net/famousphoto/150.jpg'
+WHERE item_ID = 150;
+UPDATE ItemTable
+SET item_image = 'https://m3hjimotiesphoto.blob.core.windows.net/famousphoto/151.jpg'
+WHERE item_ID = 151;
+
+UPDATE ItemTable
+SET item_image = 'https://m3hjimotiesphoto.blob.core.windows.net/famousphoto/152.jpg'
+WHERE item_ID = 152;
+
+UPDATE ItemTable
+SET item_image = 'https://m3hjimotiesphoto.blob.core.windows.net/famousphoto/153.jpg'
+WHERE item_ID = 153;
+
+UPDATE ItemTable
+SET item_image = 'https://m3hjimotiesphoto.blob.core.windows.net/famousphoto/154.jpg'
+WHERE item_ID = 154;
+
+UPDATE ItemTable
+SET item_image = 'https://m3hjimotiesphoto.blob.core.windows.net/famousphoto/155.jpg'
+WHERE item_ID = 155;
+
+UPDATE ItemTable
+SET item_image = 'https://m3hjimotiesphoto.blob.core.windows.net/famousphoto/156.jpg'
+WHERE item_ID = 156;
+
+UPDATE ItemTable
+SET item_image = 'https://m3hjimotiesphoto.blob.core.windows.net/famousphoto/157.jpg'
+WHERE item_ID = 157;
+
+UPDATE ItemTable
+SET item_image = 'https://m3hjimotiesphoto.blob.core.windows.net/famousphoto/158.jpg'
+WHERE item_ID = 158;
+
+UPDATE ItemTable
+SET item_image = 'https://m3hjimotiesphoto.blob.core.windows.net/famousphoto/159.jpg'
+WHERE item_ID = 159;
+
+UPDATE ItemTable
+SET item_image = 'https://m3hjimotiesphoto.blob.core.windows.net/famousphoto/160.jpg'
+WHERE item_ID = 160;
+
+UPDATE ItemTable
+SET item_image = 'https://m3hjimotiesphoto.blob.core.windows.net/famousphoto/161.jpg'
+WHERE item_ID = 161;
+
+UPDATE ItemTable
+SET item_image = 'https://m3hjimotiesphoto.blob.core.windows.net/famousphoto/162.jpg'
+WHERE item_ID = 162;
+
+UPDATE ItemTable
+SET item_image = 'https://m3hjimotiesphoto.blob.core.windows.net/famousphoto/163.jpg'
+WHERE item_ID = 163;
+
+UPDATE ItemTable
+SET item_image = 'https://m3hjimotiesphoto.blob.core.windows.net/famousphoto/164.jpg'
+WHERE item_ID = 164;
+
+UPDATE ItemTable
+SET item_image = 'https://m3hjimotiesphoto.blob.core.windows.net/famousphoto/165.jpg'
+WHERE item_ID = 165;
+
+UPDATE ItemTable
+SET item_image = 'https://m3hjimotiesphoto.blob.core.windows.net/famousphoto/166.jpg'
+WHERE item_ID = 166;
+
+UPDATE ItemTable
+SET item_image = 'https://m3hjimotiesphoto.blob.core.windows.net/famousphoto/167.jpg'
+WHERE item_ID = 167;
+
+UPDATE ItemTable
+SET item_image = 'https://m3hjimotiesphoto.blob.core.windows.net/famousphoto/168.jpg'
+WHERE item_ID = 168;
+
+UPDATE ItemTable
+SET item_image = 'https://m3hjimotiesphoto.blob.core.windows.net/famousphoto/169.jpg'
+WHERE item_ID = 169;
+
+UPDATE ItemTable
+SET item_image = 'https://m3hjimotiesphoto.blob.core.windows.net/famousphoto/170.jpg'
+WHERE item_ID = 170;
+
+UPDATE ItemTable
+SET item_image = 'https://m3hjimotiesphoto.blob.core.windows.net/famousphoto/171.jpg'
+WHERE item_ID = 171;
+
+UPDATE ItemTable
+SET item_image = 'https://m3hjimotiesphoto.blob.core.windows.net/famousphoto/172.jpg'
+WHERE item_ID = 172;
+
+UPDATE ItemTable
+SET item_image = 'https://m3hjimotiesphoto.blob.core.windows.net/famousphoto/173.jpg'
+WHERE item_ID = 173;
+
+UPDATE ItemTable
+SET item_image = 'https://m3hjimotiesphoto.blob.core.windows.net/famousphoto/174.jpg'
+WHERE item_ID = 174;
+
+UPDATE ItemTable
+SET item_image = 'https://m3hjimotiesphoto.blob.core.windows.net/famousphoto/175.jpg'
+WHERE item_ID = 175;
+
+UPDATE ItemTable
+SET item_image = 'https://m3hjimotiesphoto.blob.core.windows.net/famousphoto/176.jpg'
+WHERE item_ID = 176;
+
+UPDATE ItemTable
+SET item_image = 'https://m3hjimotiesphoto.blob.core.windows.net/famousphoto/177.jpg'
+WHERE item_ID = 177;
+
+UPDATE ItemTable
+SET item_image = 'https://m3hjimotiesphoto.blob.core.windows.net/famousphoto/178.jpg'
+WHERE item_ID = 178;
+
+UPDATE ItemTable
+SET item_image = 'https://m3hjimotiesphoto.blob.core.windows.net/famousphoto/179.jpg'
+WHERE item_ID = 179;
+
+UPDATE ItemTable
+SET item_image = 'https://m3hjimotiesphoto.blob.core.windows.net/famousphoto/180.jpg'
+WHERE item_ID = 180;
+
+UPDATE ItemTable
+SET item_image = 'https://m3hjimotiesphoto.blob.core.windows.net/famousphoto/181.jpg'
+WHERE item_ID = 181;
+
+UPDATE ItemTable
+SET item_image = 'https://m3hjimotiesphoto.blob.core.windows.net/famousphoto/182.jpg'
+WHERE item_ID = 182;
+
+UPDATE ItemTable
+SET item_image = 'https://m3hjimotiesphoto.blob.core.windows.net/famousphoto/183.jpg'
+WHERE item_ID = 183;
+
+UPDATE ItemTable
+SET item_image = 'https://m3hjimotiesphoto.blob.core.windows.net/famousphoto/184.jpg'
+WHERE item_ID = 184;
+
+UPDATE ItemTable
+SET item_image = 'https://m3hjimotiesphoto.blob.core.windows.net/famousphoto/185.jpg'
+WHERE item_ID = 185;
+
+UPDATE ItemTable
+SET item_image = 'https://m3hjimotiesphoto.blob.core.windows.net/famousphoto/186.jpg'
+WHERE item_ID = 186;
+
+UPDATE ItemTable
+SET item_image = 'https://m3hjimotiesphoto.blob.core.windows.net/famousphoto/187.jpg'
+WHERE item_ID = 187;
+
+UPDATE ItemTable
+SET item_image = 'https://m3hjimotiesphoto.blob.core.windows.net/famousphoto/188.jpg'
+WHERE item_ID = 188;
+
+UPDATE ItemTable
+SET item_image = 'https://m3hjimotiesphoto.blob.core.windows.net/famousphoto/189.jpg'
+WHERE item_ID = 189;
+
+UPDATE ItemTable
+SET item_image = 'https://m3hjimotiesphoto.blob.core.windows.net/famousphoto/190.jpg'
+WHERE item_ID = 190;
+
+UPDATE ItemTable
+SET item_image = 'https://m3hjimotiesphoto.blob.core.windows.net/famousphoto/191.jpg'
+WHERE item_ID = 191;
+
+UPDATE ItemTable
+SET item_image = 'https://m3hjimotiesphoto.blob.core.windows.net/famousphoto/192.jpg'
+WHERE item_ID = 192;
+
+UPDATE ItemTable
+SET item_image = 'https://m3hjimotiesphoto.blob.core.windows.net/famousphoto/193.jpg'
+WHERE item_ID = 193;
+
+UPDATE ItemTable
+SET item_image = 'https://m3hjimotiesphoto.blob.core.windows.net/famousphoto/194.jpg'
+WHERE item_ID = 194;
+
+UPDATE ItemTable
+SET item_image = 'https://m3hjimotiesphoto.blob.core.windows.net/famousphoto/195.jpg'
+WHERE item_ID = 195;
+
+UPDATE ItemTable
+SET item_image = 'https://m3hjimotiesphoto.blob.core.windows.net/famousphoto/196.jpg'
+WHERE item_ID = 196;
+
+UPDATE ItemTable
+SET item_image = 'https://m3hjimotiesphoto.blob.core.windows.net/famousphoto/197.jpg'
+WHERE item_ID = 197;
+
+UPDATE ItemTable
+SET item_image = 'https://m3hjimotiesphoto.blob.core.windows.net/famousphoto/198.jpg'
+WHERE item_ID = 198;
+
+UPDATE ItemTable
+SET item_image = 'https://m3hjimotiesphoto.blob.core.windows.net/famousphoto/199.jpg'
+WHERE item_ID = 199;
+
+UPDATE ItemTable
+SET item_image = 'https://m3hjimotiesphoto.blob.core.windows.net/famousphoto/200.jpg'
+WHERE item_ID = 200;
+
+UPDATE ItemTable
+SET item_image = 'https://m3hjimotiesphoto.blob.core.windows.net/famousphoto/201.jpg'
+WHERE item_ID = 201;
+
+UPDATE ItemTable
+SET item_image = 'https://m3hjimotiesphoto.blob.core.windows.net/famousphoto/202.jpg'
+WHERE item_ID = 202;
+
+UPDATE ItemTable
+SET item_image = 'https://m3hjimotiesphoto.blob.core.windows.net/famousphoto/203.jpg'
+WHERE item_ID = 203;
+
+UPDATE ItemTable
+SET item_image = 'https://m3hjimotiesphoto.blob.core.windows.net/famousphoto/204.jpg'
+WHERE item_ID = 204;
+
+UPDATE ItemTable
+SET item_image = 'https://m3hjimotiesphoto.blob.core.windows.net/famousphoto/205.jpg'
+WHERE item_ID = 205;
+
+UPDATE ItemTable
+SET item_image = 'https://m3hjimotiesphoto.blob.core.windows.net/famousphoto/206.jpg'
+WHERE item_ID = 206;
+
+UPDATE ItemTable
+SET item_image = 'https://m3hjimotiesphoto.blob.core.windows.net/famousphoto/207.jpg'
+WHERE item_ID = 207;
+
+UPDATE ItemTable
+SET item_image = 'https://m3hjimotiesphoto.blob.core.windows.net/famousphoto/208.jpg'
+WHERE item_ID = 208;
+
+UPDATE ItemTable
+SET item_image = 'https://m3hjimotiesphoto.blob.core.windows.net/famousphoto/209.jpg'
+WHERE item_ID = 209;
+
+UPDATE ItemTable
+SET item_image = 'https://m3hjimotiesphoto.blob.core.windows.net/famousphoto/210.jpg'
+WHERE item_ID = 210;
+
+UPDATE ItemTable
+SET item_image = 'https://m3hjimotiesphoto.blob.core.windows.net/famousphoto/211.jpg'
+WHERE item_ID = 211;
+
+UPDATE ItemTable
+SET item_image = 'https://m3hjimotiesphoto.blob.core.windows.net/famousphoto/212.jpg'
+WHERE item_ID = 212;
+
+UPDATE ItemTable
+SET item_image = 'https://m3hjimotiesphoto.blob.core.windows.net/famousphoto/213.jpg'
+WHERE item_ID = 213;
+
+UPDATE ItemTable
+SET item_image = 'https://m3hjimotiesphoto.blob.core.windows.net/famousphoto/214.jpg'
+WHERE item_ID = 214;
+
+UPDATE ItemTable
+SET item_image = 'https://m3hjimotiesphoto.blob.core.windows.net/famousphoto/215.jpg'
+WHERE item_ID = 215;
+
+UPDATE ItemTable
+SET item_image = 'https://m3hjimotiesphoto.blob.core.windows.net/famousphoto/216.jpg'
+WHERE item_ID = 216;
+
+UPDATE ItemTable
+SET item_image = 'https://m3hjimotiesphoto.blob.core.windows.net/famousphoto/217.jpg'
+WHERE item_ID = 217;
+
+UPDATE ItemTable
+SET item_image = 'https://m3hjimotiesphoto.blob.core.windows.net/famousphoto/218.jpg'
+WHERE item_ID = 218;
+
+UPDATE ItemTable
+SET item_image = 'https://m3hjimotiesphoto.blob.core.windows.net/famousphoto/219.jpg'
+WHERE item_ID = 219;
+
+UPDATE ItemTable
+SET item_image = 'https://m3hjimotiesphoto.blob.core.windows.net/famousphoto/220.jpg'
+WHERE item_ID = 220;
+
+UPDATE ItemTable
+SET item_image = 'https://m3hjimotiesphoto.blob.core.windows.net/famousphoto/221.jpg'
+WHERE item_ID = 221;
+
+UPDATE ItemTable
+SET item_image = 'https://m3hjimotiesphoto.blob.core.windows.net/famousphoto/222.jpg'
+WHERE item_ID = 222;
+
+UPDATE ItemTable
+SET item_image = 'https://m3hjimotiesphoto.blob.core.windows.net/famousphoto/223.jpg'
+WHERE item_ID = 223;
+
+UPDATE ItemTable
+SET item_image = 'https://m3hjimotiesphoto.blob.core.windows.net/famousphoto/224.jpg'
+WHERE item_ID = 224;
+
+UPDATE ItemTable
+SET item_image = 'https://m3hjimotiesphoto.blob.core.windows.net/famousphoto/225.jpg'
+WHERE item_ID = 225;
+
+UPDATE ItemTable
+SET item_image = 'https://m3hjimotiesphoto.blob.core.windows.net/famousphoto/226.jpg'
+WHERE item_ID = 226;
+
+UPDATE ItemTable
+SET item_image = 'https://m3hjimotiesphoto.blob.core.windows.net/famousphoto/227.jpg'
+WHERE item_ID = 227;
+
+UPDATE ItemTable
+SET item_image = 'https://m3hjimotiesphoto.blob.core.windows.net/famousphoto/228.jpg'
+WHERE item_ID = 228;
+
+UPDATE ItemTable
+SET item_image = 'https://m3hjimotiesphoto.blob.core.windows.net/famousphoto/229.jpg'
+WHERE item_ID = 229;
+
+UPDATE ItemTable
+SET item_image = 'https://m3hjimotiesphoto.blob.core.windows.net/famousphoto/230.jpg'
+WHERE item_ID = 230;
+
+UPDATE ItemTable
+SET item_image = 'https://m3hjimotiesphoto.blob.core.windows.net/famousphoto/231.jpg'
+WHERE item_ID = 231;
+
+UPDATE ItemTable
+SET item_image = 'https://m3hjimotiesphoto.blob.core.windows.net/famousphoto/232.jpg'
+WHERE item_ID = 232;
+
+UPDATE ItemTable
+SET item_image = 'https://m3hjimotiesphoto.blob.core.windows.net/famousphoto/233.jpg'
+WHERE item_ID = 233;
+
+UPDATE ItemTable
+SET item_image = 'https://m3hjimotiesphoto.blob.core.windows.net/famousphoto/234.jpg'
+WHERE item_ID = 234;
+
+UPDATE ItemTable
+SET item_image = 'https://m3hjimotiesphoto.blob.core.windows.net/famousphoto/235.jpg'
+WHERE item_ID = 235;

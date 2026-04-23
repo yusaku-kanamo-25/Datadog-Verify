@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>個人情報編集</title>
+  <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/@mdi/font@5.9.55/css/materialdesignicons.min.css'><link rel="stylesheet" href="./RegisterInfo.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<body>
+<div class="personal-info-page">
+  <div class="form">
+    <form class="edit-form" id="editForm">
+      <div class="input-container">
+        <i class="mdi mdi-account icon"></i>
+        <input type="text" id="name-edit" placeholder="名前" class="form-input" />
+      </div>
+      <div class="input-container">
+        <i class="mdi mdi-email icon"></i>
+        <input type="email" id="email-edit" placeholder="メールアドレス" class="form-input" />
+      </div>
+      <div class="input-container">
+        <i class="mdi mdi-lock icon"></i>
+        <input type="password" id="password-edit" placeholder="パスワード" class="form-input" />
+      </div>
+      <div class="input-container">
+        <i class="mdi mdi-home icon"></i>
+        <input type="text" id="address-edit" placeholder="住所" class="form-input" />
+      </div>
+      <div class="input-container">
+        <i class="mdi mdi-map-marker icon"></i>
+        <input type="text" id="zip-edit" placeholder="郵便番号" class="form-input" />
+      </div>
+      <div class="input-container">
+        <i class="mdi mdi-phone icon"></i>
+        <input type="text" id="phone-edit" placeholder="電話番号" class="form-input" />
+      </div>
+      <button type="button" class="save-btn" id="save-btn" onclick="saveChanges()">個人情報を更新</button>
+    </form>
+
+    <div class="back-to-home">
+      <a href="Mypage.html">マイページに戻る</a>
+    </div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script> <!-- SweetAlert2のスクリプトを追加 -->
+</body>
+</html>
+<!-- partial -->
+  <script src='https://code.jquery.com/jquery-3.6.0.min.js'></script><script  src="./RegisterInfo.js"></script>
+
+</body>
+</html>

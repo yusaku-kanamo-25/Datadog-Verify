@@ -1,0 +1,15 @@
+.scroll-item {
+  cursor: pointer;
+  /* 必要に応じて他のスタイルを追加 */
+}
+.scroll-item:hover {
+  /* ホバー時のスタイルを追加することもできます */
+  background-color: #f0f0f0; /* 例: ホバー時に背景色を変更 */
+}
+
+.center-green-text {
+  display: flex; /* フレックスボックスを使って中央寄せ */
+  justify-content: center; /* 水平方向に中央寄せ */
+  align-items: center; /* 垂直方向に中央寄せ */
+  color: #7b9e7a !important; 
+}

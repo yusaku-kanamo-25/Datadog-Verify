@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>管理者メニュー</title>
+  
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>管理者画面</title>
+  <link href="https://cdn.jsdelivr.net/npm/@mdi/font/css/materialdesignicons.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/vuetify@2.5.5/dist/vuetify.min.css" rel="stylesheet">
+</head>
+<body>
+  <div id="app">
+    <v-app>
+      <v-container class="d-flex flex-column align-center justify-center" style="height: 100vh;">
+        <v-btn 
+          @click="stockCheck"
+          class="mb-3" 
+          color="#d1d1d1" 
+          style="width: 240px; font-weight: bold; font-size: 18px; border: 1px solid black;"
+        >
+          在庫管理
+        </v-btn>
+        <v-btn 
+          @click="itemRegister"
+          class="mb-3" 
+          color="#d1d1d1" 
+          style="width: 240px; font-weight: bold; font-size: 18px; border: 1px solid black;"
+        >
+          商品登録
+        </v-btn>
+        <v-btn 
+          @click="orderCheck"
+          class="mb-3" 
+          color="#d1d1d1" 
+          style="width: 240px; font-weight: bold; font-size: 18px; border: 1px solid black;"
+        >
+          注文確認
+        </v-btn>
+
+         <!-- ログアウトボタンを右下に配置 -->
+         <v-container style="position: absolute; bottom: 20px; right: 60px; padding: 0; text-align:right;">
+          <v-btn 
+            @click="logout"
+            color="#d1d1d1" 
+            style="width: 90px; font-weight: bold; font-size: 12px; border: 1px solid black; margin: 0;"
+          >
+            ログアウト
+          </v-btn>
+        </v-container>
+      </v-container>
+    </v-app>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vuetify@2.5.5/dist/vuetify.js"></script>
+  <script src="app.js"></script> <!-- JavaScriptファイルを読み込む -->
+</body>
+</html>
+<!-- partial -->
+  <script  src="./EmployeeMenu.js"></script>
+
+</body>
+</html>

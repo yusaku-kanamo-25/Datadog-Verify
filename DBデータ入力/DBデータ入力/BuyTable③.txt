@@ -1,0 +1,2 @@
+INSERT INTO BuyTable (user_ID, item_ID, item_name, item_num, item_price, item_image) VALUES
+(1, 2, 'サーモン', 2, 3000, 'salmon_image_url_here');

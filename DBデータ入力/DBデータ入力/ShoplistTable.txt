@@ -1,0 +1,2 @@
+INSERT INTO ShoplistTable (user_ID, item_ID, item_num) VALUES
+(1, 2, 3);

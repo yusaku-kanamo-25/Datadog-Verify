@@ -1,0 +1,22 @@
+.custom-app-bar {
+  max-height: 50px !important;
+  padding: 0 16px;
+}
+.v-toolbar-title {
+  line-height: 30px !important;
+}
+.custom-btn-primary, .custom-btn-secondary {
+  background-color: #7b9e7a !important;
+  color: white !important;
+  border-radius: 4px;
+}
+.custom-btn-back {
+  background-color: #f44336 !important; /* 赤色 */
+  color: white !important; /* 白文字 */
+  border-radius: 4px;
+}
+.custom-btn-home {
+  color: #ffffff !important; /* 白文字 */
+  text-transform: none !important; /* テキストの変形を無効化 */
+  font-size: 16px !important; /* フォントサイズの調整 */
+}

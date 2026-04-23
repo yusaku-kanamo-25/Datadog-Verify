@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>マイページ</title>
+  <!-- VuetifyのCSSとJS、Vue.jsのCDNリンクを追加 -->
+  <link href="https://cdn.jsdelivr.net/npm/@mdi/font/css/materialdesignicons.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/vuetify@2.5.10/dist/vuetify.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vuetify@2.5.10/dist/vuetify.js"></script>
+  <style>
+    .custom-app-bar {
+      max-height: 50px !important;
+      padding: 0 16px;
+    }
+    .v-toolbar-title {
+      line-height: 30px !important;
+    }
+    .custom-btn-primary, .custom-btn-secondary {
+      background-color: #7b9e7a !important;
+      color: white !important;
+      border-radius: 4px;
+    }
+    .custom-btn-back {
+      background-color: #f44336 !important; /* 赤色 */
+      color: white !important; /* 白文字 */
+      border-radius: 4px;
+    }
+    .custom-btn-home {
+      color: #ffffff !important; /* 白文字 */
+      text-transform: none !important; /* テキストの変形を無効化 */
+      font-size: 16px !important; /* フォントサイズの調整 */
+    }
+  </style>
+</head>
+<body>
+  <div id="app">
+    <v-app style="background-color: #e0f0e6;">
+      <!-- 題名バー -->
+      <v-app-bar color="#7b9e7a" dark dense class="custom-app-bar">
+        <v-toolbar-title style="font-size: 20px;">マイページ</v-toolbar-title>
+        <!-- ホームボタン -->
+        <v-spacer></v-spacer>
+      </v-app-bar>
+
+      <!-- メインコンテンツ -->
+      <v-container>
+        <v-row class="d-flex justify-center align-center" style="min-height: 60vh;">
+          <v-col cols="12" md="6">
+            <v-row>
+              <v-col cols="6">
+                <v-btn block class="custom-btn-primary" @click="goToPurchaseHistory">
+                  <v-icon left>mdi-history</v-icon> 購入履歴
+                </v-btn>
+              </v-col>
+              <v-col cols="6">
+                <v-btn block class="custom-btn-secondary" @click="goToPersonalInfo">
+                  <v-icon left>mdi-account</v-icon> 個人情報編集
+                </v-btn>
+              </v-col>
+            </v-row>
+            <v-row>
+              <v-col cols="6">
+                <v-btn block class="custom-btn-primary" @click="goToCart">
+                  <v-icon left>mdi-cart-outline</v-icon> カート
+                </v-btn>
+              </v-col>
+              <v-col cols="6">
+                <v-btn block class="custom-btn-secondary" @click="goToFavorites">
+                  <v-icon left>mdi-heart</v-icon> お気に入り
+                </v-btn>
+              </v-col>
+            </v-row>
+
+            <!-- 戻るボタンを下に中央に配置 -->
+            <v-row class="d-flex justify-center mt-4">
+              <v-btn class="custom-btn-back" @click="goToHome">
+                ホームに戻る
+              </v-btn>
+            </v-row>
+          </v-col>
+        </v-row>
+      </v-container>
+    </v-app>
+  </div>
+
+  <script>
+    new Vue({
+      el: '#app',
+      vuetify: new Vuetify(),
+      methods: {
+        goToHome() {
+          // ホームページに遷移する処理（例としてホームのURLを指定）
+          window.location.href = 'index.html';
+        },
+        goToPurchaseHistory() {
+          // 購入履歴ページに遷移
+          window.location.href = 'BuyHistory.html';
+        },
+        goToPersonalInfo() {
+          // 個人情報編集ページに遷移
+          window.location.href = 'RegisterInfo.html';
+        },
+        goToCart() {
+          // カートページに遷移
+          window.location.href = 'Shoplist..html';
+        },
+        goToFavorites() {
+          // お気に入りページに遷移
+          window.location.href = 'Favorite.html';
+        },
+      }
+    });
+  </script>
+</body>
+</html>
