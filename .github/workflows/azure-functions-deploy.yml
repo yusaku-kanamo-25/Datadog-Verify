@@ -1,0 +1,56 @@
+name: Deploy Azure Functions App
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'MinakiAPI/MinakiAPI/jimoties/**'
+      - '.github/workflows/azure-functions-deploy.yml'
+  workflow_dispatch:
+
+env:
+  AZURE_FUNCTIONAPP_NAME: 'jimoties-funcapp'
+  DOTNET_VERSION: '8.0.x'
+
+jobs:
+  build-and-deploy:
+    runs-on: windows-latest
+    environment: production
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+
+    - name: Setup DotNet ${{ env.DOTNET_VERSION }}
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: ${{ env.DOTNET_VERSION }}
+
+    - name: Build and Publish
+      shell: pwsh
+      run: |
+        cd MinakiAPI/MinakiAPI/jimoties
+        dotnet publish jimoties.csproj --configuration Release --output ./publish
+
+    - name: Create deployment package
+      shell: pwsh
+      run: |
+        Compress-Archive -Path MinakiAPI/MinakiAPI/jimoties/publish/* -DestinationPath deploy.zip -Force
+
+    - name: Deploy to Azure Functions
+      uses: Azure/functions-action@v1
+      with:
+        app-name: ${{ env.AZURE_FUNCTIONAPP_NAME }}
+        package: 'deploy.zip'
+        publish-profile: ${{ secrets.AZURE_FUNCTIONAPP_PUBLISH_PROFILE }}
+        scm-do-build-during-deployment: false
+        enable-oryx-build: false
+
+    - name: Deployment Summary
+      shell: pwsh
+      run: |
+        "### Deployment Completed! :rocket:" | Out-File -FilePath $env:GITHUB_STEP_SUMMARY -Append
+        "" | Out-File -FilePath $env:GITHUB_STEP_SUMMARY -Append
+        "- **Function App**: ${{ env.AZURE_FUNCTIONAPP_NAME }}" | Out-File -FilePath $env:GITHUB_STEP_SUMMARY -Append
+        "- **URL**: https://${{ env.AZURE_FUNCTIONAPP_NAME }}.azurewebsites.net" | Out-File -FilePath $env:GITHUB_STEP_SUMMARY -Append
