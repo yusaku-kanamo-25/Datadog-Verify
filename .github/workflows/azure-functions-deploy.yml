@@ -5,7 +5,7 @@ on:
     branches:
       - main
     paths:
-      - 'MinakiAPI/MinakiAPI/jimoties/**'
+      - 'API(皆木)/API(皆木)/jimoties/**'
       - '.github/workflows/azure-functions-deploy.yml'
   workflow_dispatch:
 
@@ -30,13 +30,13 @@ jobs:
     - name: Build and Publish
       shell: pwsh
       run: |
-        cd MinakiAPI/MinakiAPI/jimoties
+        cd API(皆木)/API(皆木)/jimoties
         dotnet publish jimoties.csproj --configuration Release --output ./publish
 
     - name: Create deployment package
       shell: pwsh
       run: |
-        Compress-Archive -Path MinakiAPI/MinakiAPI/jimoties/publish/* -DestinationPath deploy.zip -Force
+        Compress-Archive -Path API(皆木)/API(皆木)/jimoties/publish/* -DestinationPath deploy.zip -Force
 
     - name: Deploy to Azure Functions
       uses: Azure/functions-action@v1
