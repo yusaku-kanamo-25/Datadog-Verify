@@ -36,8 +36,9 @@ jobs:
     - name: Create deployment package
       shell: pwsh
       run: |
-        Compress-Archive -Path "API(皆木)/API(皆木)/jimoties/publish/*" -DestinationPath deploy.zip -Force
-
+       cd "API(皆木)/API(皆木)/jimoties/publish"
+       Compress-Archive -Path * -DestinationPath "../../deploy.zip" -Force
+       
     - name: Deploy to Azure Functions
       uses: Azure/functions-action@v1
       with:
