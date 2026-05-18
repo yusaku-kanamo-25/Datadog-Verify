@@ -1,3 +1,19 @@
+<publishData><publishProfile profileName="jimoties-funcapp - Web Deploy" publishMethod="MSDeploy" publishUrl="jimoties-funcapp-ascgethndza6g3hq.scm.japaneast-01.azurewebsites.net:443" msdeploySite="jimoties-funcapp" userName="$jimoties-funcapp" userPWD="qstfKMZKk46H2enNbGYWtAl0pNZzK4tvqpnd7J4l0k2Wajkifj7dzeBMF3ub" destinationAppUrl="https://jimoties-funcapp-ascgethndza6g3hq.japaneast-01.azurewebsites.net" SQLServerDBConnectionString="" mySQLDBConnectionString="" hostingProviderForumLink="" controlPanelLink="https://portal.azure.com" webSystem="WebSites"><databases /></publishProfile><publishProfile profileName="jimoties-funcapp - FTP" publishMethod="FTP" publishUrl="ftps://waws-prod-ty1-099.ftp.azurewebsites.windows.net/site/wwwroot" ftpPassiveMode="True" userName="REDACTED" userPWD="REDACTED" destinationAppUrl="https://jimoties-funcapp-ascgethndza6g3hq.japaneast-01.azurewebsites.net" SQLServerDBConnectionString="REDACTED" mySQLDBConnectionString="" hostingProviderForumLink="" controlPanelLink="https://portal.azure.com" webSystem="WebSites"><databases /></publishProfile><publishProfile profileName="jimoties-funcapp - Zip Deploy" publishMethod="ZipDeploy" publishUrl="jimoties-funcapp-ascgethndza6g3hq.scm.japaneast-01.azurewebsites.net:443" userName="$jimoties-funcapp" userPWD="qstfKMZKk46H2enNbGYWtAl0pNZzK4tvqpnd7J4l0k2Wajkifj7dzeBMF3ub" destinationAppUrl="https://jimoties-funcapp-ascgethndza6g3hq.japaneast-01.azurewebsites.net" SQLServerDBConnectionString="" mySQLDBConnectionString="" hostingProviderForumLink="" controlPanelLink="https://portal.azure.com" webSystem="WebSites"><databases /></publishProfile></publishData>
+
+
+Datadog Japan 柴田様
+
+いつも大変お世話になっております。DLTXの金茂です。
+この度はお忙しい中、延長をご承認いただきありがとうございます。
+アカウントへログインして利用可否を確認したのですが、現在もログインできず、以下の画面のままとなっております。
+
+お手数をおかけし大変恐縮ですが、お手すきの際に再度ご確認いただけますでしょうか。
+また、ご質問につきましてもご回答いただきありがとうございました。
+
+頂いた内容をもとに、現在発生している問題へ対応を進めてまいります。
+引き続き、どうぞよろしくお願いいたします。
+
+
 name: Deploy Azure Functions App
 
 on:
@@ -19,15 +35,15 @@ jobs:
     environment: production
 
     steps:
-    - name: Checkout
+    - name: 'Checkout GitHub Action'
       uses: actions/checkout@v4
 
-    - name: Setup DotNet ${{ env.DOTNET_VERSION }}
+    - name: Setup DotNet ${{ env.DOTNET_VERSION }} Environment
       uses: actions/setup-dotnet@v4
       with:
         dotnet-version: ${{ env.DOTNET_VERSION }}
 
-    - name: Build and Publish
+    - name: 'Build and Publish'
       shell: pwsh
       run: |
         cd "API(皆木)/API(皆木)/jimoties"
@@ -47,10 +63,9 @@ jobs:
         scm-do-build-during-deployment: false
         enable-oryx-build: false
 
-    - name: Deployment Summary
-      shell: pwsh
+    - name: 'Deployment Summary'
       run: |
-        "### Deployment Completed! :rocket:" | Out-File -FilePath $env:GITHUB_STEP_SUMMARY -Append
-        "" | Out-File -FilePath $env:GITHUB_STEP_SUMMARY -Append
-        "- **Function App**: ${{ env.AZURE_FUNCTIONAPP_NAME }}" | Out-File -FilePath $env:GITHUB_STEP_SUMMARY -Append
-        "- **URL**: https://${{ env.AZURE_FUNCTIONAPP_NAME }}.azurewebsites.net" | Out-File -FilePath $env:GITHUB_STEP_SUMMARY -Append
+        echo "### Deployment Completed! :rocket:" >> $GITHUB_STEP_SUMMARY
+        echo "" >> $GITHUB_STEP_SUMMARY
+        echo "- **Function App**: ${{ env.AZURE_FUNCTIONAPP_NAME }}" >> $GITHUB_STEP_SUMMARY
+        echo "- **URL**: https://${{ env.AZURE_FUNCTIONAPP_NAME }}.azurewebsites.net" >> $GITHUB_STEP_SUMMARY
