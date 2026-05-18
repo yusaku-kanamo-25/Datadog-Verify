@@ -10,7 +10,7 @@ on:
   workflow_dispatch:
 
 env:
-  AZURE_FUNCTIONAPP_NAME: 'jimoties-funcapp'
+  AZURE_FUNCTIONAPP_NAME: 'jimoties-funcapp2'
   DOTNET_VERSION: '8.0.x'
 
 jobs:
